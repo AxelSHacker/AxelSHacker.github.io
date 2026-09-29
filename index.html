@@ -29,7 +29,7 @@
         }
 
         .container {
-            max-width: 3500px;
+            max-width: 2500px;
             margin: 0 auto;
         }
 
@@ -266,10 +266,16 @@
     <!-- Proyecto 1: The Rising of Necromancy -->
     <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.85), rgba(22, 25, 32, 0.95)), url('FondoRisingof.png'); background-size: cover; background-position: center;"> 
         <div class="project-header">
-            <h3 class="project-title">The Rising of Necromancy</h3>
-            <img src="8330691.png" alt="Necromancy Icon" style="height: 250px; border-radius: 4px; vertical-align: middle;">
-            <span class="badge">PC</span>
-        </div>
+    <!-- Título a la izquierda -->
+    <h3 class="project-title">The Rising of Necromancy</h3>
+    <!-- Grupo alineado a la derecha -->
+    <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
+        <!-- Imagen/Icono -->
+        <img src="8330691.png" alt="Necromancy Icon" style="height: 200px; border-radius: 8px;">
+        <!-- Badge PC aumentado de tamaño -->
+        <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">PC</span>
+    </div>
+</div>
         <p class="role">Diseño y Programación de Gameplay / IA</p>
         <ul class="project-details">
             <li><strong>Arquitectura FSM:</strong> <a href="https://github.com/AxelSHacker/The-Rising-of-Necromancy/tree/main/The%20Rising%20of%20Necromancy/Assets/Scripts/StateMaschine" target="_blank">Diseño e implementación de la Máquina de Estados Modular</a> que gobierna la IA <a href="https://github.com/AxelSHacker/The-Rising-of-Necromancy/blob/main/The%20Rising%20of%20Necromancy/Assets/Scripts/Utilidades/IAExtensionMethod.cs" target="_blank">enemiga y aliada</a>.</li>
@@ -286,9 +292,11 @@
     <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.85), rgba(22, 25, 32, 0.95)), url('Captura de pantalla 2026-09-28 215647'); background-size: cover; background-position: center;">
         <div class="project-header">
             <h3 class="project-title">Wazungus Invasión</h3>
-            <img src="7264143.png" alt="Necromancy Icon" style="height: 250px; border-radius: 4px; vertical-align: middle;">
-            <span class="badge">Solo Developer (100%)</span>
-        </div>
+            <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
+                <img src="7264143.png" alt="Necromancy Icon" style="height: 200px; border-radius: 4px; vertical-align: middle;">
+                <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">Solo Developer (100%)</span>
+         </div>
+    </div>
         <p class="role">Shooter en tercera persona de supervivencia por oleadas</p>
         <ul class="project-details">
             <li><strong>Arquitectura de Rendimiento (Object Pooling):</strong> Implementación de un sistema de <a href="https://github.com/AxelSHacker/Proyecto-2-Trimestre/tree/main/Shoot_The_Guiris/Assets/Scripts/PoolSystem" target="_blank">Pool System</a> centralizado para la gestión óptima de memoria en enemigos, proyectiles y loot, garantizando un framerate estable.</li>
@@ -305,9 +313,11 @@
     <div class="project-card">
         <div class="project-header">
             <h3 class="project-title">The Elusive Knight</h3>
-            <img src="Logo Android.png" alt="Necromancy Icon" style="height: 100px; border-radius: 4px; vertical-align: middle; transform: rotate(90deg);">
-            <span class="badge">Solo Developer (100%)</span>
+            <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
+                <img src="Logo Android.png" alt="Necromancy Icon" style="height: 100px; border-radius: 4px; vertical-align: middle; transform: rotate(90deg);">
+                <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">Solo Developer (100%)</span>
         </div>
+    </div>
         <p class="role">Plataformas y Endless Runner</p>
         <ul class="project-details">
             <li><strong>Moveset Dinámico del Jugador:</strong> Cambia sus mecánicas, física y conjunto de habilidades según si está en zona de <a href="https://github.com/AxelSHacker/Proyecto-1-Trimeste-Repo/tree/main/Running%20Knight/Assets/Scripts/Player" target="_blank">plataformas o en fase Endless Runner</a>.</li>
