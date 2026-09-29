@@ -133,7 +133,7 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 15px;
             margin-bottom: 15px;
         }
 
@@ -145,9 +145,7 @@
         .badge {
             background: #2a313d;
             color: var(--accent-color);
-            padding: 4px 12px;
             border-radius: 20px;
-            font-size: 0.85rem;
             font-weight: bold;
         }
 
@@ -173,6 +171,18 @@
             left: 0;
             color: var(--accent-color);
             font-size: 1.2rem;
+        }
+
+        .media-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .media-container img {
+            border-radius: 8px;
+            object-fit: cover;
         }
 
         a {
@@ -266,47 +276,65 @@
     <!-- Proyecto 1: The Rising of Necromancy -->
     <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.85), rgba(22, 25, 32, 0.95)), url('FondoRisingof.png'); background-size: cover; background-position: center;"> 
         <div class="project-header">
-    <!-- Título a la izquierda -->
-    <h3 class="project-title">The Rising of Necromancy</h3>
-    <!-- Grupo alineado a la derecha -->
-    <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
-        <!-- Imagen/Icono -->
-        <img src="8330691.png" alt="Necromancy Icon" style="height: 200px; border-radius: 8px;">
-        <!-- Badge PC aumentado de tamaño -->
-        <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">PC</span>
-    </div>
-</div>
+            <h3 class="project-title">The Rising of Necromancy</h3>
+            <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
+                <img src="8330691.png" alt="Necromancy Icon" style="height: 150px; border-radius: 8px;">
+                <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">PC</span>
+            </div>
+        </div>
         <p class="role">Diseño y Programación de Gameplay / IA</p>
         <ul class="project-details">
-            <li><strong>Arquitectura FSM:</strong> <a href="https://github.com/AxelSHacker/The-Rising-of-Necromancy/tree/main/The%20Rising%20of%20Necromancy/Assets/Scripts/StateMaschine" target="_blank">Diseño e implementación de la Máquina de Estados Modular</a> que gobierna la IA <a href="https://github.com/AxelSHacker/The-Rising-of-Necromancy/blob/main/The%20Rising%20of%20Necromancy/Assets/Scripts/Utilidades/IAExtensionMethod.cs" target="_blank">enemiga y aliada</a>.</li>
-            <li><strong>Sistemas de Formaciones:</strong> Motor de desplazamiento en grupo con <a href="https://github.com/AxelSHacker/The-Rising-of-Necromancy/blob/main/The%20Rising%20of%20Necromancy/Assets/Scripts/Player/FormaciondeEjercito.cs" target="_blank">mantenimiento de posición en tiempo real (NavMesh)</a> y <a href="https://github.com/AxelSHacker/The-Rising-of-Necromancy/blob/main/The%20Rising%20of%20Necromancy/Assets/Scripts/Invocaciones/EditorFormacionUI.cs" target="_blank">panel de edición de formación dinámico</a>.</li>
-            <img src="PanelFormacions.gif" alt="Necromancy Icon" style="width: 40%; height: auto; max-height: 400px; object-fit: cover; border-radius: 8px; margin: 15px 0;">
-            <li><strong>Combate Táctico y Asignación:</strong> <a href="https://github.com/AxelSHacker/The-Rising-of-Necromancy/blob/main/The%20Rising%20of%20Necromancy/Assets/Scripts/Utilidades/ViewSensor.cs" target="_blank">Algoritmo de detección</a>, selección de objetivos y distribución de slots de ataque adaptados al tipo de arma (Melee/Ranged).</li>
-            <img src="AsignaciondeSlots.gif" alt="Necromancy Icon" style="width: 40%; height: auto; max-height: 400px; object-fit: cover; border-radius: 8px; margin: 15px 0;">
-            <li><strong>Mecánica de Invocación:</strong> Sistema de spawneo e integración de unidades aliadas a la formación del ejército.</li>
-            <img src="Levantar-muertos.gif" alt="Necromancy Icon" style="width: 40%; height: auto; max-height: 400px; object-fit: cover; border-radius: 8px; margin: 15px 0;">
+            <li><strong>Arquitectura FSM:</strong> Diseño e implementación de la Máquina de Estados Modular que gobierna la IA enemiga y aliada. <em>(Código bajo repositorio privado - Acceso disponible bajo petición)</em>.</li>
+            <li><strong>Sistemas de Formaciones:</strong> Motor de desplazamiento en grupo con mantenimiento de posición en tiempo real (NavMesh) y panel de edición de formación dinámico.</li>
         </ul>
+        
+        <div class="media-container">
+            <img src="PanelFormacions.gif" alt="Panel de Formaciones" style="width: 45%; max-height: 350px;">
+        </div>
+
+        <ul class="project-details">
+            <li><strong>Combate Táctico y Asignación:</strong> Algoritmo de detección, selección de objetivos y distribución de slots de ataque adaptados al tipo de arma (Melee/Ranged).</li>
+        </ul>
+
+        <div class="media-container">
+            <img src="AsignaciondeSlots.gif" alt="Asignación de Slots" style="width: 45%; max-height: 350px;">
+        </div>
+
+        <ul class="project-details">
+            <li><strong>Mecánica de Invocación:</strong> Sistema de spawneo e integración de unidades aliadas a la formación del ejército.</li>
+        </ul>
+
+        <div class="media-container">
+            <img src="Levantar-muertos.gif" alt="Mecánica de Invocación" style="width: 45%; max-height: 350px;">
+        </div>
     </div>
 
     <!-- Proyecto 2: Wazungus Invasión -->
-    <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.85), rgba(22, 25, 32, 0.95)), url('Captura de pantalla 2026-09-28 215647'); background-size: cover; background-position: center;">
+    <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.85), rgba(22, 25, 32, 0.95)), url('Captura%20de%20pantalla%202026-09-28%20215647.png'); background-size: cover; background-position: center;">
         <div class="project-header">
             <h3 class="project-title">Wazungus Invasión</h3>
             <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
-                <img src="7264143.png" alt="Necromancy Icon" style="height: 200px; border-radius: 4px; vertical-align: middle;">
+                <img src="7264143.png" alt="Wazungus Icon" style="height: 150px; border-radius: 4px;">
                 <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">Solo Developer (100%)</span>
-         </div>
-    </div>
+            </div>
+        </div>
         <p class="role">Shooter en tercera persona de supervivencia por oleadas</p>
         <ul class="project-details">
-            <li><strong>Arquitectura de Rendimiento (Object Pooling):</strong> Implementación de un sistema de <a href="https://github.com/AxelSHacker/Proyecto-2-Trimestre/tree/main/Shoot_The_Guiris/Assets/Scripts/PoolSystem" target="_blank">Pool System</a> centralizado para la gestión óptima de memoria en enemigos, proyectiles y loot, garantizando un framerate estable.</li>
-            <li><strong>Sistema de Oleadas & Spawn Dinámico:</strong> <a href="https://github.com/AxelSHacker/Proyecto-2-Trimestre/blob/MapaLowPoly/Shoot_The_Guiris/Assets/Scripts/Controlers/WaveController.cs" target="_blank">Motor de progresión por hordas</a> con control de dificultad escalable y gestión de spawners distribuidos.</li>
+            <li><strong>Arquitectura de Rendimiento (Object Pooling):</strong> Implementación de un sistema de Pool System centralizado para la gestión óptima de memoria en enemigos, proyectiles y loot, garantizando un framerate estable.</li>
+            <li><strong>Sistema de Oleadas & Spawn Dinámico:</strong> Motor de progresión por hordas con control de dificultad escalable y gestión de spawners distribuidos.</li>
             <li><strong>Diseño de Niveles (Tarifa Old Town):</strong> Reconstrucción del casco antiguo de Tarifa adaptado a mecánicas de combate, rutas de flanqueo y chokepoints.</li>
-            <img src="Captura de pantalla 2026-09-28 193545.png" alt="Necromancy Icon" style="height: 300px; border-radius: 4px; vertical-align: middle;"> <img src="Captura de pantalla 2026-09-28 192739.png" alt="Necromancy Icon" style="height: 300px; border-radius: 4px; vertical-align: middle;">
-            <li><strong>Mecánicas de Combate & UI:</strong> Disparo modular con comportamiento diferido <a href="https://github.com/AxelSHacker/Proyecto-2-Trimestre/tree/MapaLowPoly/Shoot_The_Guiris/Assets/Scripts/Armas/Proyectil" target="_blank">por tipo de proyectil</a>, ataque especial AoE y minimapa en tiempo real.</li>
+        </ul>
+
+        <div class="media-container">
+            <img src="Captura%20de%20pantalla%202026-09-28%20193545.png" alt="Tarifa Level Design 1" style="height: 250px;">
+            <img src="Captura%20de%20pantalla%202026-09-28%20192739.png" alt="Tarifa Level Design 2" style="height: 250px;">
+        </div>
+
+        <ul class="project-details">
+            <li><strong>Mecánicas de Combate & UI:</strong> Disparo modular con comportamiento diferido por tipo de proyectil, ataque especial AoE y minimapa en tiempo real.</li>
             <li><strong>Arte y Sonido:</strong> Assets de uso libre.</li>
         </ul>
-        <a href="https://axel-gamedeb.itch.io/wazungus-invasion" target="_blank" class="itch-link">🎮 ¿Quieres probarlo en itch.io?</a>
+        <a href="https://axel-gamedeb.itch.io/wazungus-invasion" target="_blank" class="itch-link">🎮 Jugar Demo en itch.io</a>
     </div>
 
     <!-- Proyecto 3: The Elusive Knight -->
@@ -314,16 +342,16 @@
         <div class="project-header">
             <h3 class="project-title">The Elusive Knight</h3>
             <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
-                <img src="Logo Android.png" alt="Necromancy Icon" style="height: 100px; border-radius: 4px; vertical-align: middle; transform: rotate(90deg);">
+                <img src="Logo%20Android.png" alt="Android Logo" style="height: 80px; border-radius: 4px; transform: rotate(90deg);">
                 <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">Solo Developer (100%)</span>
+            </div>
         </div>
-    </div>
         <p class="role">Plataformas y Endless Runner</p>
         <ul class="project-details">
-            <li><strong>Moveset Dinámico del Jugador:</strong> Cambia sus mecánicas, física y conjunto de habilidades según si está en zona de <a href="https://github.com/AxelSHacker/Proyecto-1-Trimeste-Repo/tree/main/Running%20Knight/Assets/Scripts/Player" target="_blank">plataformas o en fase Endless Runner</a>.</li>
-            <li><strong>Generación Procedural Grid:</strong> Sistema de generación aleatoria e <a href="https://github.com/AxelSHacker/Proyecto-1-Trimeste-Repo/blob/main/Running%20Knight/Assets/Scripts/Controllerrs/SectionSpawnerController.cs" target="_blank">instanciación dinámica de tramos de mapa</a> mediante Grid.</li>
+            <li><strong>Moveset Dinámico del Jugador:</strong> Cambia sus mecánicas, física y conjunto de habilidades según si está en zona de plataformas o en fase Endless Runner.</li>
+            <li><strong>Generación Procedural Grid:</strong> Sistema de generación aleatoria e instanciación dinámica de tramos de mapa mediante Grid.</li>
             <li><strong>Power-Ups & Enemigos Regionales:</strong> Coleccionables con efectos temporales y variedad de enemigos con comportamientos únicos.</li>
-            <li><strong>Parallax Scroll Adaptativo:</strong> Motor de paralaje multicapa (<a href="https://github.com/AxelSHacker/Proyecto-1-Trimeste-Repo/tree/main/Running%20Knight/Assets/Scripts/Parallax" target="_blank">Parallax System</a>).</li>
+            <li><strong>Parallax Scroll Adaptativo:</strong> Motor de paralaje multicapa (Parallax System).</li>
         </ul>
     </div>
 
