@@ -356,28 +356,91 @@
         <a href="https://axel-gamedeb.itch.io/wazungus-invasion" target="_blank" class="itch-link">🎮 Jugar Demo en itch.io</a>
     </div>
 
-    <!-- Proyecto 3: The Elusive Knight -->
-    <div class="project-card">
-        <div class="project-header">
-            <h3 class="project-title">The Elusive Knight</h3>
-            <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
-                <img src="Logo%20Android.png" alt="Android Logo" style="height: 80px; border-radius: 4px; transform: rotate(90deg);">
-                <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">Solo Developer (100%)</span>
-            </div>
+<!-- Proyecto 3: The Elusive Knight -->
+<div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.88), rgba(22, 25, 32, 0.95)), url('ElusiveKnight GB.jpg'); background-size: cover; background-position: center;">
+    <div class="project-header">
+        <h3 class="project-title">The Elusive Knight</h3>
+        <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
+            <img src="Logo%20Android.png" alt="Android Logo" style="height: 80px; border-radius: 4px; transform: rotate(90deg);">
+            <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">Solo Developer (100%)</span>
         </div>
-        <p class="role">Plataformas y Endless Runner</p>
-        <ul class="project-details">
-            <li><strong>Moveset Dinámico del Jugador:</strong> Cambia sus mecánicas, física y conjunto de habilidades según si está en zona de plataformas o en fase Endless Runner.</li>
-            <li><strong>Generación Procedural Grid:</strong> Sistema de generación aleatoria e instanciación dinámica de tramos de mapa mediante Grid.</li>
-            <li><strong>Power-Ups & Enemigos Regionales:</strong> Coleccionables con efectos temporales y variedad de enemigos con comportamientos únicos.</li>
-            <li><strong>Parallax Scroll Adaptativo:</strong> Motor de paralaje multicapa (Parallax System).</li>
-        </ul>
     </div>
+    
+    <p class="role">Plataformas 2D y Endless Runner para Android</p>
 
-    <footer>
-        <p>© Axel Samuel Häcker García - Desarrollado para GitHub Pages</p>
-    </footer>
+    <!-- Lista de Puntos Técnicos con Desplegables -->
+    <ul class="project-details">
+        <li>
+            <strong>Moveset Dinámico del Jugador:</strong> Cambia sus mecánicas, física y conjunto de habilidades según si está en zona de 
+            <a href="javascript:void(0)" onclick="toggleGif('gifMoveset')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">
+                plataformas o en fase Endless Runner
+            </a>.
+            <div id="gifMoveset" style="display: none; margin-top: 12px;">
+                <img src="elusive-moveset.gif" alt="Moveset Gameplay" style="width: 45%; max-height: 300px; border-radius: 8px; object-fit: cover;">
+            </div>
+        </li>
 
+        <li>
+            <strong>Generación Procedural Grid:</strong> Sistema de generación aleatoria e 
+            <a href="javascript:void(0)" onclick="toggleGif('gifGrid')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">
+                instanciación dinámica de tramos de mapa mediante Grid
+            </a>.
+            <div id="gifGrid" style="display: none; margin-top: 12px;">
+                <img src="elusive-grid.gif" alt="Generación Procedural" style="width: 45%; max-height: 300px; border-radius: 8px; object-fit: cover;">
+            </div>
+        </li>
+
+        <li>
+            <strong>Power-Ups & Enemigos Regionales:</strong> Coleccionables con efectos temporales y variedad de enemigos con comportamientos únicos.
+        </li>
+
+        <li>
+            <strong>Parallax Scroll Adaptativo:</strong> Motor de paralaje multicapa 
+            <a href="javascript:void(0)" onclick="toggleGif('gifParallax')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">
+                (Ver sistema de capas en acción)
+            </a>.
+            <div id="gifParallax" style="display: none; margin-top: 12px;">
+                <img src="elusive-parallax.gif" alt="Parallax System" style="width: 45%; max-height: 300px; border-radius: 8px; object-fit: cover;">
+            </div>
+        </li>
+    </ul>
+
+    <!-- 📸 GALERÍA PROFESIONAL DE 5 IMÁGENES EN GRID -->
+    <h4 style="color: var(--accent-color); margin: 25px 0 15px 0; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">
+        📸 Galería de Capturas del Editor y Gameplay
+    </h4>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 10px;">
+        <!-- Imagen 1 -->
+        <div style="background: #11141a; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+            <img src="TheElusiveKnight1.png" alt="Entorno de Plataformas" style="width: 100%; height: 160px; object-fit: cover; display: block; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+            <p style="font-size: 0.8rem; color: var(--text-muted); padding: 8px 10px; text-align: center;">Fase de Plataformas</p>
+        </div>
+
+        <!-- Imagen 2 -->
+        <div style="background: #11141a; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+            <img src="ElusiveKinght2.png" alt="Sección Runner" style="width: 100%; height: 160px; object-fit: cover; display: block; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+            <p style="font-size: 0.8rem; color: var(--text-muted); padding: 8px 10px; text-align: center;">Fase Endless Runner</p>
+        </div>
+
+        <!-- Imagen 3 -->
+        <div style="background: #11141a; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+            <img src="ElusiveKinght3" alt="Grid Spawner Unity Editor" style="width: 100%; height: 160px; object-fit: cover; display: block; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+            <p style="font-size: 0.8rem; color: var(--text-muted); padding: 8px 10px; text-align: center;">Editor: Grid Spawner</p>
+        </div>
+
+        <!-- Imagen 4 -->
+        <div style="background: #11141a; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+            <img src="ElusiveKnight4" alt="Enemigos y Bosses" style="width: 100%; height: 160px; object-fit: cover; display: block; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+            <p style="font-size: 0.8rem; color: var(--text-muted); padding: 8px 10px; text-align: center;">Enemigos Regionales</p>
+        </div>
+
+        <!-- Imagen 5 -->
+        <div style="background: #11141a; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+            <img src="ElusiveKnight5" alt="UI e Interfaz" style="width: 100%; height: 160px; object-fit: cover; display: block; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+            <p style="font-size: 0.8rem; color: var(--text-muted); padding: 8px 10px; text-align: center;">Interfaz y UI Android</p>
+        </div>
+    </div>
 </div>
 <script>
 function toggleGif(id) {
