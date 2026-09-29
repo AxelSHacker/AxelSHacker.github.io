@@ -3,22 +3,318 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Porfolio de Videojuegos | Mi Nombre</title>
+    <title>Portfolio | Axel Samuel Häcker García</title>
     <style>
-        body { font-family: Arial, sans-serif; background: #121212; color: #fff; margin: 0; padding: 40px; text-align: center; }
-        h1 { color: #00e676; }
-        .project { border: 1px solid #333; padding: 20px; margin: 20px auto; max-width: 600px; border-radius: 8px; background: #1e1e1e; }
-        a { color: #00e676; text-decoration: none; font-weight: bold; }
+        :root {
+            --bg-color: #0f1115;
+            --card-bg: #161920;
+            --accent-color: #00e676;
+            --text-color: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --border-color: #262c36;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .contact-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* About & Bio */
+        .section-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+        }
+
+        .skills-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        /* Projects */
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: border-color 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent-color);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .project-title {
+            font-size: 1.6rem;
+            color: #fff;
+        }
+
+        .badge {
+            background: #2a313d;
+            color: var(--accent-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .role {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .project-details {
+            list-style: none;
+        }
+
+        .project-details li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .project-details li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--accent-color);
+            transition: 0.2s;
+        }
+
+        a:hover {
+            color: #fff;
+            border-bottom-style: solid;
+        }
+
+        .itch-link {
+            display: inline-block;
+            margin-top: 15px;
+            background: #ff2449;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: bold;
+            border: none;
+        }
+
+        .itch-link:hover {
+            background: #e01b3c;
+            color: #fff;
+            border: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
-    <h1>¡Hola! Soy Desarrollador y Diseñador en Unity</h1>
-    <p>Bienvenido a mi porfolio de videojuegos.</p>
 
-    <div class="project">
-        <h2>Proyecto 1: Nombre de tu juego</h2>
-        <p>Descripción corta: Un juego de plataformas 2D desarrollado en Unity con C#.</p>
-        <p><strong>Rol:</strong> Game Designer & Lead Programmer</p>
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <h1>Axel Samuel Häcker García</h1>
+        <p class="subtitle">Programador y Diseñador de Videojuegos en Unity</p>
+        <a href="mailto:axelsamuelh@gmail.com" class="contact-btn">✉ Contactar por Email</a>
+    </header>
+
+    <!-- Sobre Mí -->
+    <section class="section-card">
+        <h2>¡Hola! Gracias por visitar mi portfolio</h2>
+        <p>En 2015 me mudé a Alemania para formarme y trabajar en el sector técnico. Tras 8 años, decidí dar el paso hacia lo que realmente me apasiona: el desarrollo de videojuegos. Para profesionalizarme, combiné mi trabajo con un bootcamp en Unity y posteriormente completé un Máster en Diseño y Programación de Videojuegos en EVAD.</p>
+        <br>
+        <p>Hoy me dedico en cuerpo y alma al desarrollo interactivo en Unity, aportando la disciplina, la capacidad de aprendizaje y la resolución de problemas adquiridas en mi trayectoria profesional.</p>
+    </section>
+
+    <!-- Habilidades y Estudios -->
+    <section class="section-card">
+        <h2>Habilidades, Estudios e Idiomas</h2>
+        <div class="skills-grid">
+            <div>
+                <h3>Habilidades</h3>
+                <ul class="skills-list">
+                    <li>Diseño de niveles</li>
+                    <li>Diseño y programación de IA</li>
+                    <li>Adaptabilidad e Improvisador</li>
+                    <li>Hambre de aprendizaje</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Estudios</h3>
+                <ul class="skills-list">
+                    <li>EVAD Escuela superior de Videojuego y Arte digital</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Idiomas</h3>
+                <ul class="skills-list">
+                    <li>Español (Nativo)</li>
+                    <li>Alemán</li>
+                    <li>Inglés</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <h2 style="margin-bottom: 20px; padding-left: 10px;">Proyectos Destacados</h2>
+
+    <!-- Proyecto 1: The Rising of Necromancy -->
+    <div class="project-card">
+        <div class="project-header">
+            <h3 class="project-title">The Rising of Necromancy</h3>
+            <span class="badge">PC</span>
+        </div>
+        <p class="role">Diseño y Programación de Gameplay / IA</p>
+        <ul class="project-details">
+            <li><strong>Arquitectura FSM:</strong> <a href="https://github.com/AxelSHacker/The-Rising-of-Necromancy/tree/main/The%20Rising%20of%20Necromancy/Assets/Scripts/StateMaschine" target="_blank">Diseño e implementación de la Máquina de Estados Modular</a> que gobierna la IA <a href="https://github.com/AxelSHacker/The-Rising-of-Necromancy/blob/main/The%20Rising%20of%20Necromancy/Assets/Scripts/Utilidades/IAExtensionMethod.cs" target="_blank">enemiga y aliada</a>.</li>
+            <li><strong>Sistemas de Formaciones:</strong> Motor de desplazamiento en grupo con <a href="https://github.com/AxelSHacker/The-Rising-of-Necromancy/blob/main/The%20Rising%20of%20Necromancy/Assets/Scripts/Player/FormaciondeEjercito.cs" target="_blank">mantenimiento de posición en tiempo real (NavMesh)</a> y <a href="https://github.com/AxelSHacker/The-Rising-of-Necromancy/blob/main/The%20Rising%20of%20Necromancy/Assets/Scripts/Invocaciones/EditorFormacionUI.cs" target="_blank">panel de edición de formación dinámico</a>.</li>
+            <li><strong>Combate Táctico y Asignación:</strong> <a href="https://github.com/AxelSHacker/The-Rising-of-Necromancy/blob/main/The%20Rising%20of%20Necromancy/Assets/Scripts/Utilidades/ViewSensor.cs" target="_blank">Algoritmo de detección</a>, selección de objetivos y distribución de slots de ataque adaptados al tipo de arma (Melee/Ranged).</li>
+            <li><strong>Mecánica de Invocación:</strong> Sistema de spawneo e integración de unidades aliadas a la formación del ejército.</li>
+        </ul>
     </div>
+
+    <!-- Proyecto 2: Wazungus Invasión -->
+    <div class="project-card">
+        <div class="project-header">
+            <h3 class="project-title">Wazungus Invasión</h3>
+            <span class="badge">Solo Developer (100%)</span>
+        </div>
+        <p class="role">Shooter en tercera persona de supervivencia por oleadas</p>
+        <ul class="project-details">
+            <li><strong>Arquitectura de Rendimiento (Object Pooling):</strong> Implementación de un sistema de <a href="https://github.com/AxelSHacker/Proyecto-2-Trimestre/tree/main/Shoot_The_Guiris/Assets/Scripts/PoolSystem" target="_blank">Pool System</a> centralizado para la gestión óptima de memoria en enemigos, proyectiles y loot, garantizando un framerate estable.</li>
+            <li><strong>Sistema de Oleadas & Spawn Dinámico:</strong> <a href="https://github.com/AxelSHacker/Proyecto-2-Trimestre/blob/MapaLowPoly/Shoot_The_Guiris/Assets/Scripts/Controlers/WaveController.cs" target="_blank">Motor de progresión por hordas</a> con control de dificultad escalable y gestión de spawners distribuidos.</li>
+            <li><strong>Diseño de Niveles (Tarifa Old Town):</strong> Reconstrucción del casco antiguo de Tarifa adaptado a mecánicas de combate, rutas de flanqueo y chokepoints.</li>
+            <li><strong>Mecánicas de Combate & UI:</strong> Disparo modular con comportamiento diferido <a href="https://github.com/AxelSHacker/Proyecto-2-Trimestre/tree/MapaLowPoly/Shoot_The_Guiris/Assets/Scripts/Armas/Proyectil" target="_blank">por tipo de proyectil</a>, ataque especial AoE y minimapa en tiempo real.</li>
+            <li><strong>Arte y Sonido:</strong> Assets de uso libre.</li>
+        </ul>
+        <a href="https://axel-gamedeb.itch.io/wazungus-invasion" target="_blank" class="itch-link">🎮 ¿Quieres probarlo en itch.io?</a>
+    </div>
+
+    <!-- Proyecto 3: The Elusive Knight -->
+    <div class="project-card">
+        <div class="project-header">
+            <h3 class="project-title">The Elusive Knight</h3>
+            <span class="badge">Solo Developer (100%)</span>
+        </div>
+        <p class="role">Plataformas y Endless Runner</p>
+        <ul class="project-details">
+            <li><strong>Moveset Dinámico del Jugador:</strong> Cambia sus mecánicas, física y conjunto de habilidades según si está en zona de <a href="https://github.com/AxelSHacker/Proyecto-1-Trimeste-Repo/tree/main/Running%20Knight/Assets/Scripts/Player" target="_blank">plataformas o en fase Endless Runner</a>.</li>
+            <li><strong>Generación Procedural Grid:</strong> Sistema de generación aleatoria e <a href="https://github.com/AxelSHacker/Proyecto-1-Trimeste-Repo/blob/main/Running%20Knight/Assets/Scripts/Controllerrs/SectionSpawnerController.cs" target="_blank">instanciación dinámica de tramos de mapa</a> mediante Grid.</li>
+            <li><strong>Power-Ups & Enemigos Regionales:</strong> Coleccionables con efectos temporales y variedad de enemigos con comportamientos únicos.</li>
+            <li><strong>Parallax Scroll Adaptativo:</strong> Motor de paralaje multicapa (<a href="https://github.com/AxelSHacker/Proyecto-1-Trimeste-Repo/tree/main/Running%20Knight/Assets/Scripts/Parallax" target="_blank">Parallax System</a>).</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>© Axel Samuel Häcker García - Desarrollado para GitHub Pages</p>
+    </footer>
+
+</div>
+
 </body>
 </html>
