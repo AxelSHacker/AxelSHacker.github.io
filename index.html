@@ -284,20 +284,29 @@
         </div>
         <p class="role">Diseño y Programación de Gameplay / IA</p>
         <ul class="project-details">
-            <li><strong>Arquitectura FSM:</strong> Diseño e implementación de la Máquina de Estados Modular que gobierna la IA enemiga y aliada. <em>(Código bajo repositorio privado - Acceso disponible bajo petición)</em>.</li>
-            <li><strong>Sistemas de Formaciones:</strong> Motor de desplazamiento en grupo con mantenimiento de posición en tiempo real (NavMesh) y panel de edición de formación dinámico.</li>
-        </ul>
-        
-        <div class="media-container">
-            <img src="PanelFormacions.gif" alt="Panel de Formaciones" style="width: 45%; max-height: 350px;">
-        </div>
+            <li><strong>Arquitectura FSM:</strong> Diseño e implementación de la Máquina de Estados Modular que gobierna la IA enemiga y aliada.</li>
+            <ul class="project-details">
+    <li>
+    <strong>Sistemas de Formaciones:</strong> Motor de desplazamiento en grupo con 
+    <a href="https://github.com/AxelSHacker/The-Rising-of-Necromancy/blob/main/The%20Rising%20of%20Necromancy/Assets/Scripts/Player/FormaciondeEjercito.cs" target="_blank">mantenimiento de posición en tiempo real (NavMesh)</a> 
+    y 
+    <!-- Frase interactiva que despliega/oculta el GIF -->
+    <a href="javascript:void(0)" onclick="toggleGif('gifFormacion')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">
+        panel de edición de formación dinámico
+    </a>.
+
+    <!-- GIF que se despliega justo debajo -->
+    <div id="gifFormacion" style="display: none; margin-top: 12px;">
+        <img src="PanelFormacions.gif" alt="Panel de Edición de Formación Dinámico" style="width: 45%; max-height: 350px; border-radius: 8px; object-fit: cover;">
+    </div>
+</li>
 
         <ul class="project-details">
             <li><strong>Combate Táctico y Asignación:</strong> Algoritmo de detección, selección de objetivos y distribución de slots de ataque adaptados al tipo de arma (Melee/Ranged).</li>
         </ul>
 
         <div class="media-container">
-            <img src="AsignaciondeSlots.gif" alt="Asignación de Slots" style="width: 45%; max-height: 350px;">
+            <img src="AsignaciondeSlots.gif" alt="Asignación de Slots" style="width: 40%; max-height: 350px;">
         </div>
 
         <ul class="project-details">
@@ -305,7 +314,7 @@
         </ul>
 
         <div class="media-container">
-            <img src="Levantar-muertos.gif" alt="Mecánica de Invocación" style="width: 45%; max-height: 350px;">
+            <img src="Levantar-muertos.gif" alt="Mecánica de Invocación" style="width: 40%; max-height: 350px;">
         </div>
     </div>
 
@@ -360,6 +369,15 @@
     </footer>
 
 </div>
-
+<script>
+function toggleGif(id) {
+    var elemento = document.getElementById(id);
+    if (elemento.style.display === "none" || elemento.style.display === "") {
+        elemento.style.display = "block";
+    } else {
+        elemento.style.display = "none";
+    }
+}
+</script>
 </body>
 </html>
