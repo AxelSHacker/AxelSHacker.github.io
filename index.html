@@ -344,12 +344,13 @@
 
     .dropdown-video {
         width: 100%;
-        max-width: 450px;
-        max-height: 300px;
-        border-radius: 8px;
-        object-fit: contain;
-        margin: 10px auto 0 auto;
-        display: block;
+    max-width: 480px;
+    height: 270px;          /* Altura fija idéntica (formato estándar 16:9) */
+    border-radius: 8px;
+    object-fit: cover;      /* Rellena todo el cuadro cubriendo espacios negros */
+    margin: 12px auto 0 auto;
+    display: block;
+    border: 1px solid var(--border-color);
     }
 
     /* CONTENEDOR PARA EL TRAILER (YOUTUBE / DRIVE) */
