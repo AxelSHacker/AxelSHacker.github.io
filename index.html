@@ -170,6 +170,8 @@
             border: 1px solid var(--border-color);
             border-radius: 10px;
             padding: 15px;
+            position: relative;
+            z-index: 10;
         }
 
         .gallery-vertical-panel h4 {
@@ -186,15 +188,16 @@
             gap: 12px;
             max-height: 520px;
             overflow-y: auto;
-            padding-right: 4px;
+            overflow-x: visible;
+            padding: 10px;
         }
 
         .gallery-item {
             background: #11141a;
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            overflow: hidden;
-            flex-shrink: 0;
+            overflow: visible;
+            position: relative;
         }
 
         .gallery-item img {
@@ -202,11 +205,15 @@
             height: 140px;
             object-fit: cover;
             display: block;
-            transition: transform 0.3s;
+            transition: transform 0.3s ease, z-index 0.3s ease;
+            border-radius: 8px;
         }
 
         .gallery-item img:hover {
-            transform: scale(1.04);
+            transform: scale(2.5);
+            position: relative;
+            z-index: 100;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
         }
 
         .project-details {
@@ -256,6 +263,17 @@
             border-bottom-style: solid;
         }
 
+        /* Formato estándar limitado para reproductores de vídeo desplegables */
+        .dropdown-video {
+            width: 100%;
+            max-width: 450px;
+            max-height: 300px;
+            border-radius: 8px;
+            object-fit: contain;
+            margin: 10px auto 0 auto;
+            display: block;
+        }
+
         /* Botón destacado itch.io */
         .itch-link {
             display: inline-block;
@@ -281,7 +299,6 @@
             font-size: 0.9rem;
         }
 
-        /* Adaptación responsive para móviles */
         @media (max-width: 900px) {
             .project-body-grid {
                 grid-template-columns: 1fr;
@@ -365,8 +382,8 @@
                         <a href="javascript:void(0)" onclick="toggleGif('PanelFormaciones')" class="video-link">
                             panel de edición de formación dinámico.
                         </a>
-                        <div id="PanelFormaciones" style="display: none; margin-top: 12px;">
-                            <video autoplay loop muted playsinline style="width: auto; max-width: 450px; max-height: 300px; border-radius: 8px; object-fit: contain; margin: 0 auto; display: block;">
+                        <div id="PanelFormaciones" style="display: none;">
+                            <video autoplay loop muted playsinline class="dropdown-video">
                                 <source src="Panel de Formaciones.mp4" type="video/mp4">
                                 Tu navegador no soporta el formato de vídeo.
                             </video>
@@ -374,12 +391,12 @@
                     </li>
 
                     <li>
-                        <strong>Combate Táctico y Asignación:</strong> Algoritmo  y 
+                        <strong>Combate Táctico y Asignación:</strong> Algoritmo y 
                         <a href="javascript:void(0)" onclick="toggleGif('anillosSlots')" class="video-link">
                             de detección, selección de objetivos
                         </a> 
-                        <div id="anillosSlots" style="display: none; margin-top: 12px;">
-                            <video autoplay loop muted playsinline style="width: auto; max-width: 450px; max-height: 300px; border-radius: 8px; object-fit: contain; margin: 0 auto; display: block;">
+                        <div id="anillosSlots" style="display: none;">
+                            <video autoplay loop muted playsinline class="dropdown-video">
                                 <source src="asignaciondeposicion.mp4" type="video/mp4">
                                 Tu navegador no soporta el formato de vídeo.
                             </video>
@@ -392,8 +409,8 @@
                         <a href="javascript:void(0)" onclick="toggleGif('Invocar')" class="video-link">
                             integración de unidades aliadas
                         </a> a la
-                        <div id="Invocar" style="display: none; margin-top: 12px;">
-                            <video autoplay loop muted playsinline style="width: auto; max-width: 450px; max-height: 300px; border-radius: 8px; object-fit: contain; margin: 0 auto; display: block;">
+                        <div id="Invocar" style="display: none;">
+                            <video autoplay loop muted playsinline class="dropdown-video">
                                 <source src="Levantar muertos.mp4" type="video/mp4">
                                 Tu navegador no soporta el formato de vídeo.
                             </video>
@@ -401,8 +418,8 @@
                         <a href="javascript:void(0)" onclick="toggleGif('Mover')" class="video-link">
                             formación del ejército.
                         </a>
-                        <div id="Mover" style="display: none; margin-top: 12px;">
-                            <video autoplay loop muted playsinline style="width: auto; max-width: 450px; max-height: 300px; border-radius: 8px; object-fit: contain; margin: 0 auto; display: block;">
+                        <div id="Mover" style="display: none;">
+                            <video autoplay loop muted playsinline class="dropdown-video">
                                 <source src="MovimientoenForacion.mp4" type="video/mp4">
                                 Tu navegador no soporta el formato de vídeo.
                             </video>
@@ -443,26 +460,26 @@
                     <li><strong>Diseño de Niveles (Tarifa Old Town):</strong> Reconstrucción del casco antiguo de Tarifa adaptado a mecánicas de combate, rutas de flanqueo y chokepoints.</li>
                     <li>
                         <strong>Mecánicas de Combate & UI:</strong> Disparo modular con comportamiento 
-                        <a href="javascript:void(0)" onclick="toggleGif('diferido')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">por tipo</a>, 
+                        <a href="javascript:void(0)" onclick="toggleGif('diferido')" class="video-link">por tipo</a>, 
                         habilidad de 
-                        <a href="javascript:void(0)" onclick="toggleGif('proyectil')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">de proyectil</a> 
+                        <a href="javascript:void(0)" onclick="toggleGif('proyectil')" class="video-link">de proyectil</a> 
                         y 
-                        <a href="javascript:void(0)" onclick="toggleGif('especial')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">ataque especial</a>.
+                        <a href="javascript:void(0)" onclick="toggleGif('especial')" class="video-link">ataque especial</a>.
 
-                        <div id="diferido" style="display: none; margin-top: 12px;">
-                            <video autoplay loop muted playsinline style="width: 100%; max-height: 350px; border-radius: 8px; object-fit: cover;">
+                        <div id="diferido" style="display: none;">
+                            <video autoplay loop muted playsinline class="dropdown-video">
                                 <source src="bazca de pulpo.mp4" type="video/mp4">
                                 Tu navegador no soporta el formato de vídeo.
                             </video>
                         </div>
-                        <div id="proyectil" style="display: none; margin-top: 12px;">
-                            <video autoplay loop muted playsinline style="width: 100%; max-height: 350px; border-radius: 8px; object-fit: cover;">
+                        <div id="proyectil" style="display: none;">
+                            <video autoplay loop muted playsinline class="dropdown-video">
                                 <source src="rifle de atun (1).mp4" type="video/mp4">
                                 Tu navegador no soporta el formato de vídeo.
                             </video>
                         </div>
-                        <div id="especial" style="display: none; margin-top: 12px;">
-                            <video autoplay loop muted playsinline style="width: 100%; max-height: 350px; border-radius: 8px; object-fit: cover;">
+                        <div id="especial" style="display: none;">
+                            <video autoplay loop muted playsinline class="dropdown-video">
                                 <source src="patada.mp4" type="video/mp4">
                                 Tu navegador no soporta el formato de vídeo.
                             </video>
@@ -471,7 +488,7 @@
                     <li><strong>Arte y Sonido:</strong> Assets de uso libre.</li>
                 </ul>
 
-                <a href="https://axel-gamedeb.itch.io/wazungus-invasion" target="_blank" class="itch-link">🎮 Jugar Demo en itch.io</a>
+                <a href="https://axel-gamedeb.itch.io/wazungus-invasion" target="_blank" rel="noopener noreferrer" class="itch-link">🎮 Jugar Demo en itch.io</a>
             </div>
 
             <!-- Columna Derecha: Galería Vertical -->
@@ -503,21 +520,21 @@
                 <ul class="project-details">
                     <li>
                         <strong>Moveset Dinámico del Jugador:</strong> Cambia sus mecánicas, física y conjunto de habilidades según si está en zona de 
-                        <a href="javascript:void(0)" onclick="toggleGif('gifMoveset')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">
+                        <a href="javascript:void(0)" onclick="toggleGif('gifMoveset')" class="video-link">
                             plataformas o en fase Endless Runner
                         </a>.
                         <div id="gifMoveset" style="display: none; margin-top: 12px;">
-                            <img src="elusive-moveset.gif" alt="Moveset Gameplay" style="width: 100%; max-height: 300px; border-radius: 8px; object-fit: cover;">
+                            <img src="elusive-moveset.gif" alt="Moveset Gameplay" style="width: 100%; max-width: 450px; max-height: 300px; border-radius: 8px; object-fit: cover; display: block; margin: 0 auto;">
                         </div>
                     </li>
 
                     <li>
                         <strong>Generación Procedural Grid:</strong> Sistema de generación aleatoria e 
-                        <a href="javascript:void(0)" onclick="toggleGif('gifGrid')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">
+                        <a href="javascript:void(0)" onclick="toggleGif('gifGrid')" class="video-link">
                             instanciación dinámica de tramos de mapa mediante Grid
                         </a>.
                         <div id="gifGrid" style="display: none; margin-top: 12px;">
-                            <img src="elusive-grid.gif" alt="Generación Procedural" style="width: 100%; max-height: 300px; border-radius: 8px; object-fit: cover;">
+                            <img src="elusive-grid.gif" alt="Generación Procedural" style="width: 100%; max-width: 450px; max-height: 300px; border-radius: 8px; object-fit: cover; display: block; margin: 0 auto;">
                         </div>
                     </li>
 
@@ -527,17 +544,17 @@
 
                     <li>
                         <strong>Parallax Scroll Adaptativo:</strong> Motor de paralaje multicapa 
-                        <a href="javascript:void(0)" onclick="toggleGif('gifParallax')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">
+                        <a href="javascript:void(0)" onclick="toggleGif('gifParallax')" class="video-link">
                             (Ver sistema de capas en acción)
                         </a>.
                         <div id="gifParallax" style="display: none; margin-top: 12px;">
-                            <img src="elusive-parallax.gif" alt="Parallax System" style="width: 100%; max-height: 300px; border-radius: 8px; object-fit: cover;">
+                            <img src="elusive-parallax.gif" alt="Parallax System" style="width: 100%; max-width: 450px; max-height: 300px; border-radius: 8px; object-fit: cover; display: block; margin: 0 auto;">
                         </div>
                     </li>
                 </ul>
             </div>
 
-            <!-- Columna Derecha: Galería Vertical de 5 imágenes -->
+            <!-- Columna Derecha: Galería Vertical -->
             <div class="gallery-vertical-panel">
                 <h4>📸 Capturas</h4>
                 <div class="gallery-vertical-list">
