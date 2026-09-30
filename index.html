@@ -8,7 +8,8 @@
         :root {
             --bg-color: #0f1115;
             --card-bg: #161920;
-            --accent-color: #00e676;
+            --accent-color: #00e676; /* Verde para los vídeos */
+            --url-color: #00e5ff;    /* Azul Cian para los enlaces externos */
             --text-color: #e0e0e0;
             --text-muted: #a0a0a0;
             --border-color: #262c36;
@@ -226,18 +227,36 @@
             font-size: 1.2rem;
         }
 
-        a {
+        /* ESTILOS DE ENLACES Y DESPLEGABLES */
+        
+        /* 1. Enlaces desplegables para MP4 / Vídeos (VERDE) */
+        .video-link {
             color: var(--accent-color);
             text-decoration: none;
             border-bottom: 1px dashed var(--accent-color);
+            cursor: pointer;
             transition: 0.2s;
         }
 
-        a:hover {
-            color: #fff;
+        .video-link:hover {
+            color: #ffffff;
             border-bottom-style: solid;
         }
 
+        /* 2. Enlaces externos a páginas web / URLs (AZUL CIAN) */
+        .external-link {
+            color: var(--url-color);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--url-color);
+            transition: 0.2s;
+        }
+
+        .external-link:hover {
+            color: #ffffff;
+            border-bottom-style: solid;
+        }
+
+        /* Botón destacado itch.io */
         .itch-link {
             display: inline-block;
             margin-top: 15px;
@@ -247,12 +266,12 @@
             border-radius: 6px;
             font-weight: bold;
             border: none;
+            text-decoration: none;
         }
 
         .itch-link:hover {
             background: #e01b3c;
             color: #fff;
-            border: none;
         }
 
         footer {
@@ -262,7 +281,7 @@
             font-size: 0.9rem;
         }
 
-        /* Adaptación a dispositivos móviles */
+        /* Adaptación responsive para móviles */
         @media (max-width: 900px) {
             .project-body-grid {
                 grid-template-columns: 1fr;
@@ -339,10 +358,10 @@
             <!-- Columna Izquierda: Información / Texto -->
             <div>
                 <ul class="project-details">
-                    <li><strong>Arquitectura FSM:</strong> Diseño e implementación de la Máquina de Estados Modular que gobierna la IA enemiga y aliada.</li>
+                    <li><strong>Arquitectura FSM:</strong> Diseño e implementación de la <a href="https://github.com/AxelSHacker/Rise-of-Necromancy-Scripts-/tree/main/StateMaschine" target="_blank" rel="noopener noreferrer" class="external-link">Máquina de Estados</a> Modular que gobierna la IA <a href="https://github.com/AxelSHacker/Rise-of-Necromancy-Scripts-/tree/main/Enemies" target="_blank" rel="noopener noreferrer" class="external-link">enemiga</a> y <a href="https://github.com/AxelSHacker/Rise-of-Necromancy-Scripts-/tree/main/Invocaciones" target="_blank" rel="noopener noreferrer" class="external-link">aliada</a>.</li>
                     
                     <li>
-                        <strong>Sistemas de Formaciones:</strong> Motor de desplazamiento en grupo con mantenimiento de posición en tiempo real (NavMesh) y 
+                        <strong><a href="https://github.com/AxelSHacker/Rise-of-Necromancy-Scripts-/blob/main/FormaciondeEjercito.cs" target="_blank" rel="noopener noreferrer" class="external-link">Sistemas de Formaciones</a>:</strong> Motor de desplazamiento en grupo con mantenimiento de posición en tiempo real (NavMesh) y 
                         <a href="javascript:void(0)" onclick="toggleGif('PanelFormaciones')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">
                             panel de edición de formación dinámico.
                         </a>
@@ -355,26 +374,36 @@
                     </li>
 
                     <li>
-                        <strong>Combate Táctico y Asignación:</strong> Algoritmo de detección, selección de objetivos y 
+                        <strong>Combate Táctico y Asignación:</strong> Algoritmo  y 
                         <a href="javascript:void(0)" onclick="toggleGif('anillosSlots')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">
-                            distribución de slots de ataque
-                        </a> adaptados al tipo de arma (Melee/Ranged).
+                            de detección, selección de objetivos
+                        </a> 
                         <div id="anillosSlots" style="display: none; margin-top: 12px;">
                             <video autoplay loop muted playsinline style="width: 100%; max-height: 350px; border-radius: 8px; object-fit: cover;">
                                 <source src="asignaciondeposicion.mp4" type="video/mp4">
                                 Tu navegador no soporta el formato de vídeo.
                             </video>
                         </div>
+                        <a href="https://github.com/AxelSHacker/Rise-of-Necromancy-Scripts-/blob/main/ObjetivoConSlotsAnillos.cs" target="_blank" rel="noopener noreferrer" class="external-link"> distribución de slots de ataque</a> adaptados al tipo de arma (Melee/Ranged).
                     </li>
 
                     <li>
                         <strong>Mecánica de Invocación:</strong> Sistema de spawneo e 
                         <a href="javascript:void(0)" onclick="toggleGif('Invocar')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">
                             integración de unidades aliadas
-                        </a> a la formación del ejército.
+                        </a> a la
                         <div id="Invocar" style="display: none; margin-top: 12px;">
                             <video autoplay loop muted playsinline style="width: 100%; max-height: 350px; border-radius: 8px; object-fit: cover;">
                                 <source src="Levantar muertos.mp4" type="video/mp4">
+                                Tu navegador no soporta el formato de vídeo.
+                            </video>
+                        </div>
+                        <a href="javascript:void(0)" onclick="toggleGif('Mover')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">
+                            formación del ejército.
+                        </a>
+                        <div id="Mover" style="display: none; margin-top: 12px;">
+                            <video autoplay loop muted playsinline style="width: 100%; max-height: 350px; border-radius: 8px; object-fit: cover;">
+                                <source src="MovimientoenForacion.mp4" type="video/mp4">
                                 Tu navegador no soporta el formato de vídeo.
                             </video>
                         </div>
@@ -386,8 +415,9 @@
             <div class="gallery-vertical-panel">
                 <h4>📸 Capturas</h4>
                 <div class="gallery-vertical-list">
-                    <div class="gallery-item"><img src="8330691.png" alt="Necromancy Details"></div>
-                    <div class="gallery-item"><img src="FondoRisingof.png" alt="Fondo Necromancy"></div>
+                    <div class="gallery-item"><img src="RiseOffNecromancy1.png" alt="Necromancy Details"></div>
+                    <div class="gallery-item"><img src="RiseofNecromancy2.png" alt="Fondo Necromancy"></div>
+                    <div class="gallery-item"><img src="RiseofNecromancy3.png" alt="Fondo Necromancy"></div>
                 </div>
             </div>
         </div>
