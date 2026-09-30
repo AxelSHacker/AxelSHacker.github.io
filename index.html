@@ -172,6 +172,8 @@
             padding: 15px;
             position: relative;
             z-index: 10;
+            overflow: visible !important; /* Permite que la imagen sobresalga del panel exterior */
+        }
         }
 
         .gallery-vertical-panel h4 {
@@ -188,16 +190,18 @@
             gap: 12px;
             max-height: 520px;
             overflow-y: auto;
-            overflow-x: visible;
+            overflow-x: visible !important; /* IMPORTANTE: Deja que la imagen se expanda hacia los lados */
             padding: 10px;
+            position: relative;
         }
 
         .gallery-item {
             background: #11141a;
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            overflow: visible;
+            overflow: visible !important; /* Deja libre a la imagen dentro de su ítem */
             position: relative;
+            flex-shrink: 0;
         }
 
         .gallery-item img {
@@ -205,15 +209,17 @@
             height: 140px;
             object-fit: cover;
             display: block;
-            transition: transform 0.3s ease, z-index 0.3s ease;
             border-radius: 8px;
+            transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), z-index 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            z-index: 1;
         }
 
         .gallery-item img:hover {
             transform: scale(2.5);
-            position: relative;
-            z-index: 100;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            z-index: 9999 !important; /* Se coloca por encima de absolutamente todo el panel */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.95), 0 0 15px rgba(0, 230, 118, 0.2); /* Sombra + leve brillo verde */
+            cursor: pointer;
         }
 
         .project-details {
@@ -435,6 +441,8 @@
                     <div class="gallery-item"><img src="RiseOffNecromancy1.png" alt="Necromancy Details"></div>
                     <div class="gallery-item"><img src="RiseofNecromancy2.png" alt="Fondo Necromancy"></div>
                     <div class="gallery-item"><img src="RiseofNecromancy3.png" alt="Fondo Necromancy"></div>
+                    <div class="gallery-item"><img src="RiseofNecromancy4.png" alt="Fondo Necromancy"></div>
+                    <div class="gallery-item"><img src="RiseofNecromancy5.png" alt="Fondo Necromancy"></div>
                 </div>
             </div>
         </div>
