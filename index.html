@@ -617,7 +617,7 @@
     </div> <!-- FIN PROYECTO 2 -->
 
     <!-- Proyecto 3: The Elusive Knight -->
-    <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.88), rgba(22, 25, 32, 0.95)), url('ElusiveKnight GB.jpg'); background-size: cover; background-position: center;">
+    <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.88), rgba(22, 25, 32, 0.95)), url('ElusiveKnight GB.png'); background-size: cover; background-position: center;">
         <div class="project-header">
             <h3 class="project-title">The Elusive Knight</h3>
             <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
@@ -635,10 +635,16 @@
                     <li>
                         <strong>Moveset Dinámico del Jugador:</strong> Cambia sus mecánicas, física y conjunto de habilidades según si está en zona de 
                         <a href="javascript:void(0)" onclick="toggleGif('gifMoveset')" class="video-link">
-                            plataformas o en fase Endless Runner
-                        </a>.
+                            plataformas</a>. o en fase
+                        
                         <div id="gifMoveset" style="display: none; margin-top: 12px;">
-                            <img src="elusive-moveset.gif" alt="Moveset Gameplay" style="width: 100%; max-width: 450px; max-height: 300px; border-radius: 8px; object-fit: cover; display: block; margin: 0 auto;">
+                            <img src="Plataformas.mp4" alt="Moveset Gameplay" style="width: 100%; max-width: 450px; max-height: 300px; border-radius: 8px; object-fit: cover; display: block; margin: 0 auto;">
+                        </div>
+                        <a href="javascript:void(0)" onclick="toggleGif('platform')" class="video-link">
+                            Endless Runner
+                        </a>.
+                        <div id="platform" style="display: none; margin-top: 12px;">
+                            <img src="EndLess.mp4" alt="Moveset Gameplay" style="width: 100%; max-width: 450px; max-height: 300px; border-radius: 8px; object-fit: cover; display: block; margin: 0 auto;">
                         </div>
                     </li>
 
@@ -657,15 +663,13 @@
                     </li>
 
                     <li>
-                        <strong>Parallax Scroll Adaptativo:</strong> Motor de paralaje multicapa 
-                        <a href="javascript:void(0)" onclick="toggleGif('gifParallax')" class="video-link">
-                            (Ver sistema de capas en acción)
-                        </a>.
-                        <div id="gifParallax" style="display: none; margin-top: 12px;">
-                            <img src="elusive-parallax.gif" alt="Parallax System" style="width: 100%; max-width: 450px; max-height: 300px; border-radius: 8px; object-fit: cover; display: block; margin: 0 auto;">
-                        </div>
+                        <strong>Parallax Scroll Adaptativo:</strong> Motor de <a href="https://github.com/AxelSHacker/Proyecto-1-Trimeste-Repo/tree/main/Running%20Knight/Assets/Scripts/Parallax" target="_blank" rel="noopener noreferrer" class="external-link">paralaje</a>
+ multicapa 
+    
                     </li>
                 </ul>
+                
+                <a href="https://axel-gamedeb.itch.io/the-elusive-knight" target="_blank" rel="noopener noreferrer" class="itch-link">🎮 Jugar Demo en itch.io</a>
             </div>
 
             <!-- Columna Derecha: Galería Vertical -->
