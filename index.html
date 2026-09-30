@@ -5,315 +5,333 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Axel Samuel Häcker García</title>
     <style>
-        :root {
-            --bg-color: #0f1115;
-            --card-bg: #161920;
-            --accent-color: #00e676; /* Verde para los vídeos */
-            --url-color: #00e5ff;    /* Azul Cian para los enlaces externos */
-            --text-color: #e0e0e0;
-            --text-muted: #a0a0a0;
-            --border-color: #262c36;
-        }
+    :root {
+        --bg-color: #0f1115;
+        --card-bg: #161920;
+        --accent-color: #00e676; /* Verde para los vídeos */
+        --url-color: #00e5ff;    /* Azul Cian para los enlaces externos */
+        --text-color: #e0e0e0;
+        --text-muted: #a0a0a0;
+        --border-color: #262c36;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            padding: 20px;
-        }
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        padding: 20px;
+    }
 
-        .container {
-            max-width: 1800px;
-            margin: 0 auto;
-        }
+    .container {
+        max-width: 1800px;
+        margin: 0 auto;
+    }
 
-        /* Header */
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            margin-bottom: 30px;
-        }
+    /* Header */
+    header {
+        text-align: center;
+        padding: 40px 20px;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        margin-bottom: 30px;
+    }
 
-        h1 {
-            font-size: 2.2rem;
-            color: #ffffff;
-            margin-bottom: 10px;
-        }
+    h1 {
+        font-size: 2.2rem;
+        color: #ffffff;
+        margin-bottom: 10px;
+    }
 
-        .subtitle {
-            font-size: 1.2rem;
-            color: var(--accent-color);
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
+    .subtitle {
+        font-size: 1.2rem;
+        color: var(--accent-color);
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
 
-        .contact-btn {
-            display: inline-block;
-            background: var(--accent-color);
-            color: #000;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+    .contact-btn {
+        display: inline-block;
+        background: var(--accent-color);
+        color: #000;
+        padding: 10px 20px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
 
-        .contact-btn:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
+    .contact-btn:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+    }
 
-        /* About & Bio */
-        .section-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 30px;
-        }
+    /* About & Bio */
+    .section-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 30px;
+        margin-bottom: 30px;
+    }
 
-        h2 {
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
+    h2 {
+        font-size: 1.5rem;
+        color: var(--accent-color);
+        border-bottom: 2px solid var(--border-color);
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 20px;
-        }
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-bottom: 20px;
+    }
 
-        .skills-list {
-            list-style: none;
-        }
+    .skills-list {
+        list-style: none;
+    }
 
-        .skills-list li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 8px;
-            color: var(--text-muted);
-        }
+    .skills-list li {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 8px;
+        color: var(--text-muted);
+    }
 
-        .skills-list li::before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-        }
+    .skills-list li::before {
+        content: "▹";
+        position: absolute;
+        left: 0;
+        color: var(--accent-color);
+    }
 
-        /* Projects */
-        .project-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 30px;
-            transition: border-color 0.3s;
-        }
+    /* Projects */
+    .project-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 30px;
+        margin-bottom: 30px;
+        transition: border-color 0.3s;
+    }
 
-        .project-card:hover {
-            border-color: var(--accent-color);
-        }
+    .project-card:hover {
+        border-color: var(--accent-color);
+    }
 
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
+    .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
 
-        .project-title {
-            font-size: 2.2rem;
-            color: #fff;
-        }
+    .project-title {
+        font-size: 2.2rem;
+        color: #fff;
+    }
 
-        .badge {
-            background: #2a313d;
-            color: var(--accent-color);
-            border-radius: 20px;
-            font-weight: bold;
-        }
+    .badge {
+        background: #2a313d;
+        color: var(--accent-color);
+        border-radius: 20px;
+        font-weight: bold;
+    }
 
-        .role {
-            font-style: italic;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
+    .role {
+        font-style: italic;
+        color: var(--text-muted);
+        margin-bottom: 20px;
+    }
 
-        /* GRID EN 2 COLUMNAS PARA CADA PROYECTO */
+    /* GRID EN 2 COLUMNAS PARA CADA PROYECTO */
+    .project-body-grid {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 30px;
+        align-items: start;
+    }
+
+    /* GALERÍA VERTICAL DERECHA CON EFECTO DESBORDAMIENTO EN HOVER */
+    .gallery-vertical-panel {
+        background: rgba(13, 15, 20, 0.85);
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        padding: 15px;
+        position: relative;
+        z-index: 10;
+        overflow: visible !important; /* Permite que las imágenes escaladas salgan del panel */
+    }
+
+    .gallery-vertical-panel h4 {
+        color: var(--accent-color);
+        margin: 0 0 15px 0;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .gallery-vertical-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        max-height: 520px;
+        overflow-y: auto;
+        overflow-x: visible !important; /* Mantiene scroll vertical pero no recorta hacia los lados */
+        padding: 10px;
+        position: relative;
+    }
+
+    .gallery-item {
+        background: #11141a;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        overflow: visible !important;
+        position: relative;
+        flex-shrink: 0;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+        display: block;
+        border-radius: 8px;
+        transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), z-index 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* EFECTO HOVER: Expansión sobre toda la interfaz */
+    .gallery-item img:hover {
+        transform: scale(2.5);
+        z-index: 9999 !important;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.95), 0 0 15px rgba(0, 230, 118, 0.2);
+        cursor: pointer;
+    }
+
+    .project-details {
+        list-style: none;
+    }
+
+    .project-details li {
+        margin-bottom: 12px;
+        padding-left: 20px;
+        position: relative;
+    }
+
+    .project-details li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--accent-color);
+        font-size: 1.2rem;
+    }
+
+    /* ESTILOS DE ENLACES Y DESPLEGABLES */
+    .video-link {
+        color: var(--accent-color);
+        text-decoration: none;
+        border-bottom: 1px dashed var(--accent-color);
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .video-link:hover {
+        color: #ffffff;
+        border-bottom-style: solid;
+    }
+
+    .external-link {
+        color: var(--url-color);
+        text-decoration: none;
+        border-bottom: 1px dashed var(--url-color);
+        transition: 0.2s;
+    }
+
+    .external-link:hover {
+        color: #ffffff;
+        border-bottom-style: solid;
+    }
+
+    .dropdown-video {
+        width: 100%;
+        max-width: 450px;
+        max-height: 300px;
+        border-radius: 8px;
+        object-fit: contain;
+        margin: 10px auto 0 auto;
+        display: block;
+    }
+
+    /* CONTENEDOR PARA EL TRAILER (YOUTUBE / DRIVE) */
+    .trailer-container {
+        position: relative;
+        width: 100%;
+        max-width: 650px;
+        padding-bottom: 36.25%; /* Relación de aspecto 16:9 ajustada */
+        height: 0;
+        margin: 20px 0 15px 0;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid var(--border-color);
+    }
+
+    .trailer-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    /* Botón destacado itch.io */
+    .itch-link {
+        display: inline-block;
+        margin-top: 15px;
+        background: #ff2449;
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-weight: bold;
+        border: none;
+        text-decoration: none;
+    }
+
+    .itch-link:hover {
+        background: #e01b3c;
+        color: #fff;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
         .project-body-grid {
-            display: grid;
-            grid-template-columns: 1fr 320px;
-            gap: 30px;
-            align-items: start;
+            grid-template-columns: 1fr;
         }
-
-        /* GALERÍA VERTICAL DERECHA */
-        .gallery-vertical-panel {
-            background: rgba(13, 15, 20, 0.85);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 15px;
-            position: relative;
-            z-index: 10;
-            overflow: visible !important; /* Permite que la imagen sobresalga del panel exterior */
-        }
-        }
-
-        .gallery-vertical-panel h4 {
-            color: var(--accent-color);
-            margin: 0 0 15px 0;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
         .gallery-vertical-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            max-height: 520px;
-            overflow-y: auto;
-            overflow-x: visible !important; /* IMPORTANTE: Deja que la imagen se expanda hacia los lados */
-            padding: 10px;
-            position: relative;
+            max-height: none;
         }
-
-        .gallery-item {
-            background: #11141a;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            overflow: visible !important; /* Deja libre a la imagen dentro de su ítem */
-            position: relative;
-            flex-shrink: 0;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 140px;
-            object-fit: cover;
-            display: block;
-            border-radius: 8px;
-            transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), z-index 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            z-index: 1;
-        }
-
-        .gallery-item img:hover {
-            transform: scale(2.5);
-            z-index: 9999 !important; /* Se coloca por encima de absolutamente todo el panel */
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.95), 0 0 15px rgba(0, 230, 118, 0.2); /* Sombra + leve brillo verde */
-            cursor: pointer;
-        }
-
-        .project-details {
-            list-style: none;
-        }
-
-        .project-details li {
-            margin-bottom: 12px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .project-details li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-            font-size: 1.2rem;
-        }
-
-        /* ESTILOS DE ENLACES Y DESPLEGABLES */
-        
-        /* 1. Enlaces desplegables para MP4 / Vídeos (VERDE) */
-        .video-link {
-            color: var(--accent-color);
-            text-decoration: none;
-            border-bottom: 1px dashed var(--accent-color);
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .video-link:hover {
-            color: #ffffff;
-            border-bottom-style: solid;
-        }
-
-        /* 2. Enlaces externos a páginas web / URLs (AZUL CIAN) */
-        .external-link {
-            color: var(--url-color);
-            text-decoration: none;
-            border-bottom: 1px dashed var(--url-color);
-            transition: 0.2s;
-        }
-
-        .external-link:hover {
-            color: #ffffff;
-            border-bottom-style: solid;
-        }
-
-        /* Formato estándar limitado para reproductores de vídeo desplegables */
-        .dropdown-video {
-            width: 100%;
-            max-width: 450px;
-            max-height: 300px;
-            border-radius: 8px;
-            object-fit: contain;
-            margin: 10px auto 0 auto;
-            display: block;
-        }
-
-        /* Botón destacado itch.io */
-        .itch-link {
-            display: inline-block;
-            margin-top: 15px;
-            background: #ff2449;
-            color: #fff;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-weight: bold;
-            border: none;
-            text-decoration: none;
-        }
-
-        .itch-link:hover {
-            background: #e01b3c;
-            color: #fff;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 900px) {
-            .project-body-grid {
-                grid-template-columns: 1fr;
-            }
-            .gallery-vertical-list {
-                max-height: none;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
 
@@ -432,6 +450,14 @@
                         </div>
                     </li>
                 </ul>
+                <div class="trailer-container">
+    <iframe 
+        src="https://youtu.be/Q7ytAPjJkcI?si=Zm8dSinARidDf_N9" 
+        title="Game Trailer" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+</div>
             </div>
 
             <!-- Columna Derecha: Galería Vertical -->
