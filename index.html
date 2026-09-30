@@ -29,7 +29,7 @@
         }
 
         .container {
-            max-width: 1500px;
+            max-width: 1800px;
             margin: 0 auto;
         }
 
@@ -152,7 +152,60 @@
         .role {
             font-style: italic;
             color: var(--text-muted);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* GRID EN 2 COLUMNAS PARA CADA PROYECTO */
+        .project-body-grid {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 30px;
+            align-items: start;
+        }
+
+        /* GALERÍA VERTICAL DERECHA */
+        .gallery-vertical-panel {
+            background: rgba(13, 15, 20, 0.85);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .gallery-vertical-panel h4 {
+            color: var(--accent-color);
+            margin: 0 0 15px 0;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .gallery-vertical-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-height: 520px;
+            overflow-y: auto;
+            padding-right: 4px;
+        }
+
+        .gallery-item {
+            background: #11141a;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.04);
         }
 
         .project-details {
@@ -171,18 +224,6 @@
             left: 0;
             color: var(--accent-color);
             font-size: 1.2rem;
-        }
-
-        .media-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 15px 0;
-        }
-
-        .media-container img {
-            border-radius: 8px;
-            object-fit: cover;
         }
 
         a {
@@ -219,6 +260,16 @@
             padding: 20px;
             color: var(--text-muted);
             font-size: 0.9rem;
+        }
+
+        /* Adaptación a dispositivos móviles */
+        @media (max-width: 900px) {
+            .project-body-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-vertical-list {
+                max-height: none;
+            }
         }
     </style>
 </head>
@@ -284,57 +335,63 @@
         </div>
         <p class="role">Diseño y Programación de Gameplay / IA</p>
         
-        <ul class="project-details">
-            <li><strong>Arquitectura FSM:</strong> Diseño e implementación de la Máquina de Estados Modular que gobierna la IA enemiga y aliada.</li>
-            
-            <li>
-    <strong>Sistemas de Formaciones:</strong> Motor de desplazamiento en grupo con mantenimiento de posición en tiempo real (NavMesh) y 
-    
-    <!-- 1. TEXTO INTERACTIVO: Cambia la frase dentro del <a> y la id ("videoID") -->
-    <a href="javascript:void(0)" onclick="toggleGif('Panel de Formaciones')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">
-        tu palabra o frase interactiva aquí
-    </a>.
+        <div class="project-body-grid">
+            <!-- Columna Izquierda: Información / Texto -->
+            <div>
+                <ul class="project-details">
+                    <li><strong>Arquitectura FSM:</strong> Diseño e implementación de la Máquina de Estados Modular que gobierna la IA enemiga y aliada.</li>
+                    
+                    <li>
+                        <strong>Sistemas de Formaciones:</strong> Motor de desplazamiento en grupo con mantenimiento de posición en tiempo real (NavMesh) y 
+                        <a href="javascript:void(0)" onclick="toggleGif('PanelFormaciones')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">
+                            panel de edición de formación dinámico.
+                        </a>
+                        <div id="PanelFormaciones" style="display: none; margin-top: 12px;">
+                            <video autoplay loop muted playsinline style="width: 100%; max-height: 350px; border-radius: 8px; object-fit: cover;">
+                                <source src="Panel de Formaciones.mp4" type="video/mp4">
+                                Tu navegador no soporta el formato de vídeo.
+                            </video>
+                        </div>
+                    </li>
 
-    <!-- 2. VÍDEO DESPLEGABLE: Asegúrate de que la id coincide con la de arriba -->
-    <div id="Panel de Formaciones" style="display: none; margin-top: 12px;">
-        <video autoplay loop muted playsinline style="width: 45%; max-height: 350px; border-radius: 8px; object-fit: cover;">
-            <source src="Panel de Formaciones.mp4" type="video/mp4">
-            Tu navegador no soporta el formato de vídeo.
-        </video>
-    </div>
-</li>
+                    <li>
+                        <strong>Combate Táctico y Asignación:</strong> Algoritmo de detección, selección de objetivos y 
+                        <a href="javascript:void(0)" onclick="toggleGif('anillosSlots')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">
+                            distribución de slots de ataque
+                        </a> adaptados al tipo de arma (Melee/Ranged).
+                        <div id="anillosSlots" style="display: none; margin-top: 12px;">
+                            <video autoplay loop muted playsinline style="width: 100%; max-height: 350px; border-radius: 8px; object-fit: cover;">
+                                <source src="asignaciondeposicion.mp4" type="video/mp4">
+                                Tu navegador no soporta el formato de vídeo.
+                            </video>
+                        </div>
+                    </li>
 
-            <li>
-    <strong>Combate Táctico y Asignación:</strong> Algoritmo de detección, selección de objetivos y
-    
-    <!-- 1. TEXTO INTERACTIVO: Cambia la frase dentro del <a> y la id ("videoID") -->
-    <a href="javascript:void(0)" onclick="toggleGif('anillosSlots')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">
-        distribución de slots de ataque
-                </a> adaptados al tipo de arma (Melee/Ranged).
-    <!-- 2. VÍDEO DESPLEGABLE: Asegúrate de que la id coincide con la de arriba -->
-    <div id="anillosSlots" style="display: none; margin-top: 12px;">
-        <video autoplay loop muted playsinline style="width: 45%; max-height: 350px; border-radius: 8px; object-fit: cover;">
-            <source src="asignaciondeposicion.mp4" type="video/mp4">
-            Tu navegador no soporta el formato de vídeo.
-        </video>
-    </div>
-</li>
+                    <li>
+                        <strong>Mecánica de Invocación:</strong> Sistema de spawneo e 
+                        <a href="javascript:void(0)" onclick="toggleGif('Invocar')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">
+                            integración de unidades aliadas
+                        </a> a la formación del ejército.
+                        <div id="Invocar" style="display: none; margin-top: 12px;">
+                            <video autoplay loop muted playsinline style="width: 100%; max-height: 350px; border-radius: 8px; object-fit: cover;">
+                                <source src="Levantar muertos.mp4" type="video/mp4">
+                                Tu navegador no soporta el formato de vídeo.
+                            </video>
+                        </div>
+                    </li>
+                </ul>
+            </div>
 
-            <li>
-                <strong>Mecánica de Invocación:</strong> Sistema de spawneo e
-    
-    <!-- 1. TEXTO INTERACTIVO: Cambia la frase dentro del <a> y la id ("videoID") -->
-    <a href="javascript:void(0)" onclick="toggleGif('Invocar')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">
-        integración de unidades aliadas
-                </a> a la formación del ejército.
-    <!-- 2. VÍDEO DESPLEGABLE: Asegúrate de que la id coincide con la de arriba -->
-    <div id="Invocar" style="display: none; margin-top: 12px;">
-        <video autoplay loop muted playsinline style="width: 45%; max-height: 350px; border-radius: 8px; object-fit: cover;">
-            <source src="Levantar muertos.mp4" type="video/mp4">
-            Tu navegador no soporta el formato de vídeo.
-        </video>
-    </div>
-</li> <!-- FIN PROYECTO 1 -->
+            <!-- Columna Derecha: Galería Vertical -->
+            <div class="gallery-vertical-panel">
+                <h4>📸 Capturas</h4>
+                <div class="gallery-vertical-list">
+                    <div class="gallery-item"><img src="8330691.png" alt="Necromancy Details"></div>
+                    <div class="gallery-item"><img src="FondoRisingof.png" alt="Fondo Necromancy"></div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- FIN PROYECTO 1 -->
 
     <!-- Proyecto 2: Wazungus Invasión -->
     <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.85), rgba(22, 25, 32, 0.95)), url('Captura%20de%20pantalla%202026-09-28%20215647.png'); background-size: cover; background-position: center;">
@@ -346,22 +403,56 @@
             </div>
         </div>
         <p class="role">Shooter en tercera persona de supervivencia por oleadas</p>
-        <ul class="project-details">
-            <li><strong>Arquitectura de Rendimiento (Object Pooling):</strong> Implementación de un sistema de Pool System centralizado para la gestión óptima de memoria en enemigos, proyectiles y loot, garantizando un framerate estable.</li>
-            <li><strong>Sistema de Oleadas & Spawn Dinámico:</strong> Motor de progresión por hordas con control de dificultad escalable y gestión de spawners distribuidos.</li>
-            <li><strong>Diseño de Niveles (Tarifa Old Town):</strong> Reconstrucción del casco antiguo de Tarifa adaptado a mecánicas de combate, rutas de flanqueo y chokepoints.</li>
-        </ul>
 
-        <div class="media-container">
-            <img src="Captura%20de%20pantalla%202026-09-28%20193545.png" alt="Tarifa Level Design 1" style="height: 250px;">
-            <img src="Captura%20de%20pantalla%202026-09-28%20192739.png" alt="Tarifa Level Design 2" style="height: 250px;">
+        <div class="project-body-grid">
+            <!-- Columna Izquierda: Información / Texto -->
+            <div>
+                <ul class="project-details">
+                    <li><strong>Arquitectura de Rendimiento (Object Pooling):</strong> Implementación de un sistema de Pool System centralizado para la gestión óptima de memoria en enemigos, proyectiles y loot, garantizando un framerate estable.</li>
+                    <li><strong>Sistema de Oleadas & Spawn Dinámico:</strong> Motor de progresión por hordas con control de dificultad escalable y gestión de spawners distribuidos.</li>
+                    <li><strong>Diseño de Niveles (Tarifa Old Town):</strong> Reconstrucción del casco antiguo de Tarifa adaptado a mecánicas de combate, rutas de flanqueo y chokepoints.</li>
+                    <li>
+                        <strong>Mecánicas de Combate & UI:</strong> Disparo modular con comportamiento 
+                        <a href="javascript:void(0)" onclick="toggleGif('diferido')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">por tipo</a>, 
+                        habilidad de 
+                        <a href="javascript:void(0)" onclick="toggleGif('proyectil')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">de proyectil</a> 
+                        y 
+                        <a href="javascript:void(0)" onclick="toggleGif('especial')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">ataque especial</a>.
+
+                        <div id="diferido" style="display: none; margin-top: 12px;">
+                            <video autoplay loop muted playsinline style="width: 100%; max-height: 350px; border-radius: 8px; object-fit: cover;">
+                                <source src="bazca de pulpo.mp4" type="video/mp4">
+                                Tu navegador no soporta el formato de vídeo.
+                            </video>
+                        </div>
+                        <div id="proyectil" style="display: none; margin-top: 12px;">
+                            <video autoplay loop muted playsinline style="width: 100%; max-height: 350px; border-radius: 8px; object-fit: cover;">
+                                <source src="rifle de atun (1).mp4" type="video/mp4">
+                                Tu navegador no soporta el formato de vídeo.
+                            </video>
+                        </div>
+                        <div id="especial" style="display: none; margin-top: 12px;">
+                            <video autoplay loop muted playsinline style="width: 100%; max-height: 350px; border-radius: 8px; object-fit: cover;">
+                                <source src="patada.mp4" type="video/mp4">
+                                Tu navegador no soporta el formato de vídeo.
+                            </video>
+                        </div>
+                    </li>
+                    <li><strong>Arte y Sonido:</strong> Assets de uso libre.</li>
+                </ul>
+
+                <a href="https://axel-gamedeb.itch.io/wazungus-invasion" target="_blank" class="itch-link">🎮 Jugar Demo en itch.io</a>
+            </div>
+
+            <!-- Columna Derecha: Galería Vertical -->
+            <div class="gallery-vertical-panel">
+                <h4>📸 Capturas</h4>
+                <div class="gallery-vertical-list">
+                    <div class="gallery-item"><img src="Captura%20de%20pantalla%202026-09-28%20193545.png" alt="Tarifa Level Design 1"></div>
+                    <div class="gallery-item"><img src="Captura%20de%20pantalla%202026-09-28%20192739.png" alt="Tarifa Level Design 2"></div>
+                </div>
+            </div>
         </div>
-
-        <ul class="project-details">
-            <li><strong>Mecánicas de Combate & UI:</strong> Disparo modular con comportamiento diferido por tipo de proyectil, ataque especial AoE y minimapa en tiempo real.</li>
-            <li><strong>Arte y Sonido:</strong> Assets de uso libre.</li>
-        </ul>
-        <a href="https://axel-gamedeb.itch.io/wazungus-invasion" target="_blank" class="itch-link">🎮 Jugar Demo en itch.io</a>
     </div> <!-- FIN PROYECTO 2 -->
 
     <!-- Proyecto 3: The Elusive Knight -->
@@ -376,72 +467,56 @@
         
         <p class="role">Plataformas 2D y Endless Runner para Android</p>
 
-        <!-- Lista de Puntos Técnicos con Desplegables -->
-        <ul class="project-details">
-            <li>
-                <strong>Moveset Dinámico del Jugador:</strong> Cambia sus mecánicas, física y conjunto de habilidades según si está en zona de 
-                <a href="javascript:void(0)" onclick="toggleGif('gifMoveset')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">
-                    plataformas o en fase Endless Runner
-                </a>.
-                <div id="gifMoveset" style="display: none; margin-top: 12px;">
-                    <img src="elusive-moveset.gif" alt="Moveset Gameplay" style="width: 45%; max-height: 300px; border-radius: 8px; object-fit: cover;">
+        <div class="project-body-grid">
+            <!-- Columna Izquierda: Información / Texto -->
+            <div>
+                <ul class="project-details">
+                    <li>
+                        <strong>Moveset Dinámico del Jugador:</strong> Cambia sus mecánicas, física y conjunto de habilidades según si está en zona de 
+                        <a href="javascript:void(0)" onclick="toggleGif('gifMoveset')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">
+                            plataformas o en fase Endless Runner
+                        </a>.
+                        <div id="gifMoveset" style="display: none; margin-top: 12px;">
+                            <img src="elusive-moveset.gif" alt="Moveset Gameplay" style="width: 100%; max-height: 300px; border-radius: 8px; object-fit: cover;">
+                        </div>
+                    </li>
+
+                    <li>
+                        <strong>Generación Procedural Grid:</strong> Sistema de generación aleatoria e 
+                        <a href="javascript:void(0)" onclick="toggleGif('gifGrid')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">
+                            instanciación dinámica de tramos de mapa mediante Grid
+                        </a>.
+                        <div id="gifGrid" style="display: none; margin-top: 12px;">
+                            <img src="elusive-grid.gif" alt="Generación Procedural" style="width: 100%; max-height: 300px; border-radius: 8px; object-fit: cover;">
+                        </div>
+                    </li>
+
+                    <li>
+                        <strong>Power-Ups & Enemigos Regionales:</strong> Coleccionables con efectos temporales y variedad de enemigos con comportamientos únicos.
+                    </li>
+
+                    <li>
+                        <strong>Parallax Scroll Adaptativo:</strong> Motor de paralaje multicapa 
+                        <a href="javascript:void(0)" onclick="toggleGif('gifParallax')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">
+                            (Ver sistema de capas en acción)
+                        </a>.
+                        <div id="gifParallax" style="display: none; margin-top: 12px;">
+                            <img src="elusive-parallax.gif" alt="Parallax System" style="width: 100%; max-height: 300px; border-radius: 8px; object-fit: cover;">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Columna Derecha: Galería Vertical de 5 imágenes -->
+            <div class="gallery-vertical-panel">
+                <h4>📸 Capturas</h4>
+                <div class="gallery-vertical-list">
+                    <div class="gallery-item"><img src="TheElusiveKnight1.png" alt="Entorno de Plataformas"></div>
+                    <div class="gallery-item"><img src="ElusiveKinght2.png" alt="Sección Runner"></div>
+                    <div class="gallery-item"><img src="ElusiveKinght3.png" alt="Grid Spawner Unity Editor"></div>
+                    <div class="gallery-item"><img src="ElusiveKnight4.png" alt="Enemigos y Bosses"></div>
+                    <div class="gallery-item"><img src="ElusiveKnight5.png" alt="UI e Interfaz"></div>
                 </div>
-            </li>
-
-            <li>
-                <strong>Generación Procedural Grid:</strong> Sistema de generación aleatoria e 
-                <a href="javascript:void(0)" onclick="toggleGif('gifGrid')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">
-                    instanciación dinámica de tramos de mapa mediante Grid
-                </a>.
-                <div id="gifGrid" style="display: none; margin-top: 12px;">
-                    <img src="elusive-grid.gif" alt="Generación Procedural" style="width: 45%; max-height: 300px; border-radius: 8px; object-fit: cover;">
-                </div>
-            </li>
-
-            <li>
-                <strong>Power-Ups & Enemigos Regionales:</strong> Coleccionables con efectos temporales y variedad de enemigos con comportamientos únicos.
-            </li>
-
-            <li>
-                <strong>Parallax Scroll Adaptativo:</strong> Motor de paralaje multicapa 
-                <a href="javascript:void(0)" onclick="toggleGif('gifParallax')" style="color: var(--accent-color); cursor: pointer; border-bottom: 1px dashed var(--accent-color);">
-                    (Ver sistema de capas en acción)
-                </a>.
-                <div id="gifParallax" style="display: none; margin-top: 12px;">
-                    <img src="elusive-parallax.gif" alt="Parallax System" style="width: 45%; max-height: 300px; border-radius: 8px; object-fit: cover;">
-                </div>
-            </li>
-        </ul>
-
-        <!-- 📸 GALERÍA PROFESIONAL DE 5 IMÁGENES EN GRID -->
-        <h4 style="color: var(--accent-color); margin: 25px 0 15px 0; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">
-            📸 Galería de Capturas del Editor y Gameplay
-        </h4>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 10px;">
-            <!-- Imagen 1 -->
-            <div style="background: #11141a; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
-                <img src="TheElusiveKnight1.png" alt="Entorno de Plataformas" style="width: 100%; height: 160px; object-fit: cover; display: block; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
-            </div>
-
-            <!-- Imagen 2 -->
-            <div style="background: #11141a; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
-                <img src="ElusiveKinght2.png" alt="Sección Runner" style="width: 100%; height: 160px; object-fit: cover; display: block; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
-            </div>
-
-            <!-- Imagen 3 -->
-            <div style="background: #11141a; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
-                <img src="ElusiveKinght3.png" alt="Grid Spawner Unity Editor" style="width: 100%; height: 160px; object-fit: cover; display: block; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
-            </div>
-
-            <!-- Imagen 4 -->
-            <div style="background: #11141a; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
-                <img src="ElusiveKnight4.png" alt="Enemigos y Bosses" style="width: 100%; height: 160px; object-fit: cover; display: block; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
-            </div>
-
-            <!-- Imagen 5 -->
-            <div style="background: #11141a; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
-                <img src="ElusiveKnight5.png" alt="UI e Interfaz" style="width: 100%; height: 160px; object-fit: cover; display: block; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
             </div>
         </div>
     </div> <!-- FIN PROYECTO 3 -->
