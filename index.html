@@ -172,7 +172,7 @@
         padding: 15px;
         position: relative;
         z-index: 10;
-        overflow: visible; /* Permite que el hover de la imagen salga del panel */
+        overflow: visible;
     }
 
     .gallery-vertical-panel h4 {
@@ -192,7 +192,6 @@
         padding: 5px;
     }
 
-    /* Permite que las imágenes escaladas sobresalgan de la lista con scroll al pasar el ratón */
     .gallery-vertical-list:hover {
         overflow: visible;
     }
@@ -203,12 +202,12 @@
         border-radius: 8px;
         position: relative;
         flex-shrink: 0;
-        overflow: visible; /* IMPRESCINDIBLE: no recortar la imagen al crecer */
+        overflow: visible;
         z-index: 1;
     }
 
     .gallery-item:hover {
-        z-index: 999; /* Posiciona el elemento por encima de todo el contenido */
+        z-index: 999;
     }
 
     .gallery-item img {
@@ -220,12 +219,12 @@
         transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
         cursor: pointer;
         position: relative;
-        transform-origin: center center; /* Se expande equilibradamente en todas las direcciones */
+        transform-origin: center center;
     }
 
     /* ZOOM X3 AL HACER HOVER EN LA CAPTURA Y SALIDA DEL MARCO */
     .gallery-item img:hover {
-        transform: scale(3); /* Aumenta 3 veces su tamaño */
+        transform: scale(3);
         box-shadow: 0 0 25px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 230, 118, 0.6);
         border: 1px solid var(--accent-color);
         border-radius: 6px;
@@ -608,16 +607,16 @@
                 <div class="gallery-vertical-list">
                     <div class="gallery-item"><img src="Captura%20de%20pantalla%202026-09-28%20193545.png" alt="Tarifa Level Design 1"></div>
                     <div class="gallery-item"><img src="Captura%20de%20pantalla%202026-09-28%20192739.png" alt="Tarifa Level Design 2"></div>
-                    <div class="gallery-item"><img src="Wuzungus3.png" alt="Tarifa Level Design 2"></div>
-                    <div class="gallery-item"><img src="Wuzungus4.png" alt="Tarifa Level Design 2"></div>
-                    <div class="gallery-item"><img src="Wuzungus6.png" alt="Tarifa Level Design 2"></div>
+                    <div class="gallery-item"><img src="Wuzungus3.png" alt="Tarifa Level Design 3"></div>
+                    <div class="gallery-item"><img src="Wuzungus4.png" alt="Tarifa Level Design 4"></div>
+                    <div class="gallery-item"><img src="Wuzungus6.png" alt="Tarifa Level Design 5"></div>
                 </div>
             </div>
         </div>
     </div> <!-- FIN PROYECTO 2 -->
 
     <!-- Proyecto 3: The Elusive Knight -->
-    <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.88), rgba(22, 25, 32, 0.95)), url('ElusiveKnight GB.png'); background-size: cover; background-position: center;">
+    <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.88), rgba(22, 25, 32, 0.95)), url('ElusiveKnight%20GB.png'); background-size: cover; background-position: center;">
         <div class="project-header">
             <h3 class="project-title">The Elusive Knight</h3>
             <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
@@ -634,17 +633,20 @@
                 <ul class="project-details">
                     <li>
                         <strong>Moveset Dinámico del Jugador:</strong> Cambia sus mecánicas, física y conjunto de habilidades según si está en zona de 
-                        <a href="javascript:void(0)" onclick="toggleGif('gifMoveset')" class="video-link">
-                            plataformas</a>. o en fase
+                        <a href="javascript:void(0)" onclick="toggleGif('gifMoveset')" class="video-link">plataformas</a> o en fase 
+                        <a href="javascript:void(0)" onclick="toggleGif('platform')" class="video-link">Endless Runner</a>.
                         
                         <div id="gifMoveset" style="display: none; margin-top: 12px;">
-                            <img src="Plataformas.mp4" alt="Moveset Gameplay" style="width: 100%; max-width: 450px; max-height: 300px; border-radius: 8px; object-fit: cover; display: block; margin: 0 auto;">
+                            <video autoplay loop muted playsinline class="dropdown-video">
+                                <source src="Plataformas.mp4" type="video/mp4">
+                                Tu navegador no soporta el formato de vídeo.
+                            </video>
                         </div>
-                        <a href="javascript:void(0)" onclick="toggleGif('platform')" class="video-link">
-                            Endless Runner
-                        </a>.
                         <div id="platform" style="display: none; margin-top: 12px;">
-                            <img src="EndLess.mp4" alt="Moveset Gameplay" style="width: 100%; max-width: 450px; max-height: 300px; border-radius: 8px; object-fit: cover; display: block; margin: 0 auto;">
+                            <video autoplay loop muted playsinline class="dropdown-video">
+                                <source src="EndLess.mp4" type="video/mp4">
+                                Tu navegador no soporta el formato de vídeo.
+                            </video>
                         </div>
                     </li>
 
@@ -663,9 +665,7 @@
                     </li>
 
                     <li>
-                        <strong>Parallax Scroll Adaptativo:</strong> Motor de <a href="https://github.com/AxelSHacker/Proyecto-1-Trimeste-Repo/tree/main/Running%20Knight/Assets/Scripts/Parallax" target="_blank" rel="noopener noreferrer" class="external-link">paralaje</a>
- multicapa 
-    
+                        <strong>Parallax Scroll Adaptativo:</strong> Motor de <a href="https://github.com/AxelSHacker/Proyecto-1-Trimeste-Repo/tree/main/Running%20Knight/Assets/Scripts/Parallax" target="_blank" rel="noopener noreferrer" class="external-link">paralaje multicapa</a> en 2D y sistema de intercambio de fondos.
                     </li>
                 </ul>
                 
