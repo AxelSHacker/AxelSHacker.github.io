@@ -699,11 +699,11 @@
             </div>
         </div>
     </div> <!-- FIN PROYECTO 3 -->
-    <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.85), rgba(22, 25, 32, 0.95)), url('FondoRisingof.png'); background-size: cover; background-position: center;"> 
+    <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.85), rgba(22, 25, 32, 0.95)), url('Background.png'); background-size: cover; background-position: center;"> 
         <div class="project-header">
             <h3 class="project-title">Fusionable Planet</h3>
             <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
-                <img src="Logo%20Android.png" alt="Android Logo" style="height: 150px; border-radius: 8px;">
+                <img src="Logo%20Android.png" alt="Android Logo" style="height: 80px; border-radius: 4px; transform: rotate(90deg);">
                 <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">PC</span>
             </div>
         </div>
@@ -713,7 +713,14 @@
             <!-- Columna Izquierda: Información / Texto -->
             <div>
                 <ul class="project-details">
-                    <li><strong>Sistema de Físicas y Fusión de Entidades:</strong> Implementación de algoritmos de colisión en 2D para detectar el tipo de elemento, calcular la posición media del impacto y generar la entidad del siguiente nivel</li>
+                    <li><strong>Sistema de Físicas y Fusión de Entidades:</strong> Implementación de algoritmos de <a href="javascript:void(0)" onclick="toggleGif('Fusion')" class="video-link">colisión en 2D</a>para detectar el tipo de elemento, calcular la posición media del impacto y generar la entidad del siguiente nivel</li>
+
+<div id="Fusion" style="display: none;">
+                            <video autoplay loop muted playsinline class="dropdown-video">
+                                <source src="Fusion.mp4" type="video/mp4">
+                                Tu navegador no soporta el formato de vídeo.
+                            </video>
+                        </div>
                     
                     <li>
                         <strong>Sistema de Combos y Feedback Visual:</strong> Programación de un sistema de puntuación dinámico con temporizadores de combo y efectos de partículas
