@@ -123,6 +123,7 @@
         padding: 30px;
         margin-bottom: 30px;
         transition: border-color 0.3s;
+        overflow: visible; /* Asegura expansión libre */
     }
 
     .project-card:hover {
@@ -156,7 +157,7 @@
         margin-bottom: 20px;
     }
 
-    /* GALERÍA VERTICAL DERECHA */
+    /* GALERÍA VERTICAL DERECHA (SIN CORTE) */
     .gallery-vertical-panel {
         background: rgba(13, 15, 20, 0.85);
         border: 1px solid var(--border-color);
@@ -179,8 +180,7 @@
         display: flex;
         flex-direction: column;
         gap: 12px;
-        max-height: 400px;
-        overflow-y: auto;
+        overflow: visible;
         padding: 5px;
     }
 
@@ -191,11 +191,6 @@
         position: relative;
         flex-shrink: 0;
         overflow: visible;
-        z-index: 1;
-    }
-
-    .gallery-item:hover {
-        z-index: 999;
     }
 
     .gallery-item img {
@@ -210,12 +205,13 @@
         transform-origin: center center;
     }
 
-    /* ZOOM X3 AL HACER HOVER EN LA CAPTURA Y SALIDA DEL MARCO */
+    /* ZOOM X2.5 LIBRE FUERA DEL PANEL */
     .gallery-item img:hover {
         transform: scale(2.5);
         box-shadow: 0 0 25px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 230, 118, 0.6);
         border: 1px solid var(--accent-color);
         border-radius: 6px;
+        z-index: 9999;
     }
 
     /* VISOR MODAL / PREVIEW FLOTANTE */
@@ -304,7 +300,6 @@
         font-size: 1.2rem;
     }
 
-    /* ESTILOS DE ENLACES Y DESPLEGABLES */
     .video-link {
         color: var(--accent-color);
         text-decoration: none;
@@ -330,7 +325,6 @@
         border-bottom-style: solid;
     }
 
-    /* CONTROL DE TAMAÑO DE LOS VÍDEOS DESPLEGABLES */
     .dropdown-video {
         width: 100%;
         max-width: 450px;
@@ -344,17 +338,17 @@
 
     .media-row-grid {
         display: grid;
-        grid-template-columns: 1fr 320px; /* Tráiler a la izquierda, capturas a la derecha */
+        grid-template-columns: 1fr 320px;
         gap: 25px;
         align-items: start;
         margin-bottom: 25px;
+        overflow: visible;
     }
 
-    /* REAJUSTE RESPONSIVE DEL TRAILER 16:9 */
     .trailer-container {
         position: relative;
         width: 100%;
-        padding-bottom: 56.25%; /* Mantiene proporción 16:9 */
+        padding-bottom: 56.25%;
         height: 0;
         margin: 0;
         border-radius: 8px;
@@ -377,7 +371,6 @@
         margin-top: 10px;
     }
 
-    /* Botón destacado itch.io */
     .itch-link {
         display: inline-block;
         margin-top: 15px;
@@ -402,7 +395,6 @@
         font-size: 0.9rem;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 900px) {
         .media-row-grid {
             grid-template-columns: 1fr;
@@ -541,7 +533,7 @@
                 </li>
             </ul>
         </div>
-    </div> <!-- FIN PROYECTO 1 -->
+    </div>
 
     <!-- Proyecto 2: Wazungus Invasión -->
     <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.85), rgba(22, 25, 32, 0.95)), url('Captura%20de%20pantalla%202026-09-28%20215647.png'); background-size: cover; background-position: center;">
@@ -614,9 +606,9 @@
 
             <a href="https://axel-gamedeb.itch.io/wazungus-invasion" target="_blank" rel="noopener noreferrer" class="itch-link">🎮 Jugar Demo en itch.io</a>
         </div>
-    </div> <!-- FIN PROYECTO 2 -->
+    </div>
 
-    <!-- PROYECTO 3: The Elusive Knight -->
+    <!-- Proyecto 3: The Elusive Knight -->
     <div class="project-card">
         <div class="project-header">
             <h3 class="project-title">The Elusive Knight</h3>
@@ -693,7 +685,7 @@
             
             <a href="https://axel-gamedeb.itch.io/the-elusive-knight" target="_blank" rel="noopener noreferrer" class="itch-link">🎮 Jugar Demo en itch.io</a>
         </div>
-    </div> <!-- FIN PROYECTO 3 -->
+    </div>
 
     <!-- Proyecto 4: Fusionable Planet -->
     <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.85), rgba(22, 25, 32, 0.95)), url('Background.png'); background-size: cover; background-position: center;"> 
@@ -752,9 +744,9 @@
             </ul>
             <a href="https://axel-gamedeb.itch.io/fusionable-planet" target="_blank" rel="noopener noreferrer" class="itch-link">🎮 Jugar Demo en itch.io</a>
         </div>
-    </div> <!-- FIN PROYECTO 4 -->
+    </div>
 
-</div> <!-- FIN CONTAINER -->
+</div>
 
 <!-- VISOR MODAL DE IMÁGENES DE GALERÍA -->
 <dialog id="imageModal" class="img-popover">
@@ -769,7 +761,6 @@
 </footer>
 
 <script>
-// Función para desplegar/ocultar vídeos y GIFs
 function toggleGif(id) {
     var elemento = document.getElementById(id);
     if (elemento.style.display === "none" || elemento.style.display === "") {
@@ -779,7 +770,6 @@ function toggleGif(id) {
     }
 }
 
-// Lógica para abrir el modal al hacer clic en las capturas de la galería
 document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImg');
@@ -798,7 +788,6 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.close();
     });
 
-    // Cerrar al hacer clic fuera del contenido de la imagen
     modal.addEventListener('click', function(e) {
         if (e.target === modal) {
             modal.close();
