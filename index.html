@@ -353,28 +353,41 @@
     border: 1px solid var(--border-color);
     }
 
-    /* CONTENEDOR PARA EL TRAILER (YOUTUBE / DRIVE) */
-    .trailer-container {
-        position: relative;
-        width: 100%;
-        max-width: 650px;
-        padding-bottom: 36.25%;
-        height: 0;
-        margin: 20px 0 15px 0;
-        border-radius: 8px;
-        overflow: hidden;
-        border: 1px solid var(--border-color);
-    }
+    .media-row-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px; /* Tráiler amplio a la izquierda, 320px fijos para capturas */
+    gap: 25px;
+    align-items: start;
+    margin-bottom: 25px;
+}
 
-    .trailer-container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: 0;
-    }
+/* REAJUSTE RESPONSIVE DEL TRAILER 16:9 */
+.trailer-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 56.25%; /* Mantiene exactamente la proporción 16:9 */
+    height: 0;
+    margin: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
 
+.trailer-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* AJUSTE PARA EL ÁREA DE DETALLES TÉCNICOS */
+.project-details-section {
+    width: 100%;
+    margin-top: 10px;
+}
     /* Botón destacado itch.io */
     .itch-link {
         display: inline-block;
@@ -400,14 +413,12 @@
         font-size: 0.9rem;
     }
 
-    @media (max-width: 900px) {
-        .project-body-grid {
-            grid-template-columns: 1fr;
-        }
-        .gallery-vertical-list {
-            max-height: none;
-        }
+    /* RESPONSIVE: EN PANTALLAS MÓVILES SE COLOCAN UNO DEBAJO DEL OTRO */
+@media (max-width: 900px) {
+    .media-row-grid {
+        grid-template-columns: 1fr;
     }
+}
 </style>
 </head>
 <body>
@@ -464,95 +475,97 @@
 
     <h2 style="margin-bottom: 20px; padding-left: 10px;">Proyectos Destacados</h2>
 
-    <!-- Proyecto 1: The Rising of Necromancy -->
-    <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.85), rgba(22, 25, 32, 0.95)), url('FondoRisingof.png'); background-size: cover; background-position: center;"> 
-        <div class="project-header">
-            <h3 class="project-title">The Rising of Necromancy</h3>
-            <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
-                <img src="8330691.png" alt="Necromancy Icon" style="height: 150px; border-radius: 8px;">
-                <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">PC</span>
-            </div>
+   <!-- Proyecto 1: The Rising of Necromancy -->
+<div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.85), rgba(22, 25, 32, 0.95)), url('FondoRisingof.png'); background-size: cover; background-position: center;"> 
+    <div class="project-header">
+        <h3 class="project-title">The Rising of Necromancy</h3>
+        <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
+            <img src="8330691.png" alt="Necromancy Icon" style="height: 150px; border-radius: 8px;">
+            <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">PC</span>
         </div>
+    </div>
+    
+    <p class="role">Diseño y Programación de Gameplay / IA</p>
+
+    <!-- FILA SUPERIOR: Tráiler (Izquierda) + Panel de Capturas (Derecha) -->
+    <div class="media-row-grid">
         <div class="trailer-container">
-                    <iframe 
-                        src="https://www.youtube.com/embed/Q7ytAPjJkcI" 
-                        title="Game Trailer" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+            <iframe 
+                src="https://www.youtube.com/embed/Q7ytAPjJkcI" 
+                title="Game Trailer" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
         </div>
-        <p class="role">Diseño y Programación de Gameplay / IA</p>
-        
-        <div class="project-body-grid">
-            <!-- Columna Izquierda: Información / Texto -->
-            <div>
-                <ul class="project-details">
-                    <li><strong>Arquitectura FSM:</strong> Diseño e implementación de la <a href="https://github.com/AxelSHacker/Rise-of-Necromancy-Scripts-/tree/main/StateMaschine" target="_blank" rel="noopener noreferrer" class="external-link">Máquina de Estados</a> Modular que gobierna la IA <a href="https://github.com/AxelSHacker/Rise-of-Necromancy-Scripts-/tree/main/Enemies" target="_blank" rel="noopener noreferrer" class="external-link">enemiga</a> y <a href="https://github.com/AxelSHacker/Rise-of-Necromancy-Scripts-/tree/main/Invocaciones" target="_blank" rel="noopener noreferrer" class="external-link">aliada</a>.</li>
-                    
-                    <li>
-                        <strong><a href="https://github.com/AxelSHacker/Rise-of-Necromancy-Scripts-/blob/main/FormaciondeEjercito.cs" target="_blank" rel="noopener noreferrer" class="external-link">Sistemas de Formaciones</a>:</strong> Motor de desplazamiento en grupo con mantenimiento de posición en tiempo real (NavMesh) y 
-                        <a href="javascript:void(0)" onclick="toggleGif('PanelFormaciones')" class="video-link">
-                            panel de edición de formación dinámico.
-                        </a>
-                        <div id="PanelFormaciones" style="display: none;">
-                            <video autoplay loop muted playsinline class="dropdown-video">
-                                <source src="PaneldeFormacion.mp4" type="video/mp4">
-                                Tu navegador no soporta el formato de vídeo.
-                            </video>
-                        </div>
-                    </li>
 
-                    <li>
-                        <strong>Combate Táctico y Asignación:</strong> Algoritmo y 
-                        <a href="javascript:void(0)" onclick="toggleGif('anillosSlots')" class="video-link">
-                            de detección, selección de objetivos
-                        </a> 
-                        <div id="anillosSlots" style="display: none;">
-                            <video autoplay loop muted playsinline class="dropdown-video">
-                                <source src="asignaciondeposicion.mp4" type="video/mp4">
-                                Tu navegador no soporta el formato de vídeo.
-                            </video>
-                        </div>
-                        <a href="https://github.com/AxelSHacker/Rise-of-Necromancy-Scripts-/blob/main/ObjetivoConSlotsAnillos.cs" target="_blank" rel="noopener noreferrer" class="external-link"> distribución de slots de ataque</a> adaptados al tipo de arma (Melee/Ranged).
-                    </li>
-
-                    <li>
-                        <strong>Mecánica de Invocación:</strong> Sistema de spawneo e 
-                        <a href="javascript:void(0)" onclick="toggleGif('Invocar')" class="video-link">
-                            integración de unidades aliadas
-                        </a> a la
-                        <div id="Invocar" style="display: none;">
-                            <video autoplay loop muted playsinline class="dropdown-video">
-                                <source src="Levantar muertos.mp4" type="video/mp4">
-                                Tu navegador no soporta el formato de vídeo.
-                            </video>
-                        </div>
-                        <a href="javascript:void(0)" onclick="toggleGif('Mover')" class="video-link">
-                            formación del ejército.
-                        </a>
-                        <div id="Mover" style="display: none;">
-                            <video autoplay loop muted playsinline class="dropdown-video">
-                                <source src="MovimientoenForacion.mp4" type="video/mp4">
-                                Tu navegador no soporta el formato de vídeo.
-                            </video>
-                        </div>
-                    </li>
-                </ul>
+        <div class="gallery-vertical-panel">
+            <h4>📸 Capturas</h4>
+            <div class="gallery-vertical-list">
+                <div class="gallery-item"><img src="RiseOffNecromancy1.png" alt="Necromancy Details"></div>
+                <div class="gallery-item"><img src="RiseofNecromancy2.png" alt="Fondo Necromancy"></div>
+                <div class="gallery-item"><img src="RiseofNecromancy3.png" alt="Fondo Necromancy"></div>
+                <div class="gallery-item"><img src="RiseofNecromancy4.png" alt="Fondo Necromancy"></div>
+                <div class="gallery-item"><img src="RiseofNecromancy5.png" alt="Fondo Necromancy"></div>
             </div>
+        </div>
+    </div>
 
-            <!-- Columna Derecha: Galería Vertical -->
-            <div class="gallery-vertical-panel">
-                <h4>📸 Capturas</h4>
-                <div class="gallery-vertical-list">
-                    <div class="gallery-item"><img src="RiseOffNecromancy1.png" alt="Necromancy Details"></div>
-                    <div class="gallery-item"><img src="RiseofNecromancy2.png" alt="Fondo Necromancy"></div>
-                    <div class="gallery-item"><img src="RiseofNecromancy3.png" alt="Fondo Necromancy"></div>
-                    <div class="gallery-item"><img src="RiseofNecromancy4.png" alt="Fondo Necromancy"></div>
-                    <div class="gallery-item"><img src="RiseofNecromancy5.png" alt="Fondo Necromancy"></div>
+    <!-- FILA INFERIOR: Descripciones y Funcionalidades -->
+    <div class="project-details-section">
+        <ul class="project-details">
+            <li><strong>Arquitectura FSM:</strong> Diseño e implementación de la <a href="https://github.com/AxelSHacker/Rise-of-Necromancy-Scripts-/tree/main/StateMaschine" target="_blank" rel="noopener noreferrer" class="external-link">Máquina de Estados</a> Modular que gobierna la IA <a href="https://github.com/AxelSHacker/Rise-of-Necromancy-Scripts-/tree/main/Enemies" target="_blank" rel="noopener noreferrer" class="external-link">enemiga</a> y <a href="https://github.com/AxelSHacker/Rise-of-Necromancy-Scripts-/tree/main/Invocaciones" target="_blank" rel="noopener noreferrer" class="external-link">aliada</a>.</li>
+            
+            <li>
+                <strong><a href="https://github.com/AxelSHacker/Rise-of-Necromancy-Scripts-/blob/main/FormaciondeEjercito.cs" target="_blank" rel="noopener noreferrer" class="external-link">Sistemas de Formaciones</a>:</strong> Motor de desplazamiento en grupo con mantenimiento de posición en tiempo real (NavMesh) y 
+                <a href="javascript:void(0)" onclick="toggleGif('PanelFormaciones')" class="video-link">
+                    panel de edición de formación dinámico.
+                </a>
+                <div id="PanelFormaciones" style="display: none;">
+                    <video autoplay loop muted playsinline class="dropdown-video">
+                        <source src="PaneldeFormacion.mp4" type="video/mp4">
+                        Tu navegador no soporta el formato de vídeo.
+                    </video>
                 </div>
-            </div>
-        </div>
-    </div> <!-- FIN PROYECTO 1 -->
+            </li>
+
+            <li>
+                <strong>Combate Táctico y Asignación:</strong> Algoritmo y 
+                <a href="javascript:void(0)" onclick="toggleGif('anillosSlots')" class="video-link">
+                    de detección, selección de objetivos
+                </a> 
+                <div id="anillosSlots" style="display: none;">
+                    <video autoplay loop muted playsinline class="dropdown-video">
+                        <source src="asignaciondeposicion.mp4" type="video/mp4">
+                        Tu navegador no soporta el formato de vídeo.
+                    </video>
+                </div>
+                <a href="https://github.com/AxelSHacker/Rise-of-Necromancy-Scripts-/blob/main/ObjetivoConSlotsAnillos.cs" target="_blank" rel="noopener noreferrer" class="external-link"> distribución de slots de ataque</a> adaptados al tipo de arma (Melee/Ranged).
+            </li>
+
+            <li>
+                <strong>Mecánica de Invocación:</strong> Sistema de spawneo e 
+                <a href="javascript:void(0)" onclick="toggleGif('Invocar')" class="video-link">
+                    integración de unidades aliadas
+                </a> a la
+                <div id="Invocar" style="display: none;">
+                    <video autoplay loop muted playsinline class="dropdown-video">
+                        <source src="Levantar muertos.mp4" type="video/mp4">
+                        Tu navegador no soporta el formato de vídeo.
+                    </video>
+                </div>
+                <a href="javascript:void(0)" onclick="toggleGif('Mover')" class="video-link">
+                    formación del ejército.
+                </a>
+                <div id="Mover" style="display: none;">
+                    <video autoplay loop muted playsinline class="dropdown-video">
+                        <source src="MovimientoenForacion.mp4" type="video/mp4">
+                        Tu navegador no soporta el formato de vídeo.
+                    </video>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div> <!-- FIN PROYECTO 1 -->
 
     <!-- Proyecto 2: Wazungus Invasión -->
     <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.85), rgba(22, 25, 32, 0.95)), url('Captura%20de%20pantalla%202026-09-28%20215647.png'); background-size: cover; background-position: center;">
