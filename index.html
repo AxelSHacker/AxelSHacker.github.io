@@ -484,8 +484,6 @@
             <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">PC</span>
         </div>
     </div>
-    
-    <p class="role">Diseño y Programación de Gameplay / IA</p>
 
     <!-- FILA SUPERIOR: Tráiler (Izquierda) + Panel de Capturas (Derecha) -->
     <div class="media-row-grid">
@@ -509,7 +507,7 @@
             </div>
         </div>
     </div>
-
+<p class="role">Diseño y Programación de Gameplay / IA</p>
     <!-- FILA INFERIOR: Descripciones y Funcionalidades -->
     <div class="project-details-section">
         <ul class="project-details">
@@ -568,202 +566,213 @@
 </div> <!-- FIN PROYECTO 1 -->
 
     <!-- Proyecto 2: Wazungus Invasión -->
-    <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.85), rgba(22, 25, 32, 0.95)), url('Captura%20de%20pantalla%202026-09-28%20215647.png'); background-size: cover; background-position: center;">
-        <div class="project-header">
-            <h3 class="project-title">Wazungus Invasión</h3>
-            <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
-                <img src="7264143.png" alt="Wazungus Icon" style="height: 150px; border-radius: 4px;">
-                <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">Solo Developer (100%)</span>
-            </div>
+<div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.85), rgba(22, 25, 32, 0.95)), url('Captura%20de%20pantalla%202026-09-28%20215647.png'); background-size: cover; background-position: center;">
+    <div class="project-header">
+        <h3 class="project-title">Wazungus Invasión</h3>
+        <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
+            <img src="7264143.png" alt="Wazungus Icon" style="height: 150px; border-radius: 4px;">
+            <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">Solo Developer (100%)</span>
         </div>
+    </div>
+    <!-- FILA SUPERIOR: Tráiler (Izquierda) + Panel de Capturas (Derecha) -->
+    <div class="media-row-grid">
         <div class="trailer-container">
-                    <iframe 
-                        src="https://www.youtube.com/embed/nuHJzKttcoE?si=9EQRL36ia63wfHZ7" 
-                        title="Game Trailer" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-        <p class="role">Shooter en tercera persona de supervivencia por oleadas</p>
+            <iframe 
+                src="https://www.youtube.com/embed/nuHJzKttcoE?si=9EQRL36ia63wfHZ7" 
+                title="Game Trailer" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
 
-        <div class="project-body-grid">
-            <!-- Columna Izquierda: Información / Texto -->
-            <div>
-                <ul class="project-details">
-                    <li><strong>Arquitectura de Rendimiento (Object Pooling):</strong> Implementación de un sistema de <a href="https://github.com/AxelSHacker/Proyecto-2-Trimestre/tree/main/Shoot_The_Guiris/Assets/Scripts/PoolSystem" target="_blank" rel="noopener noreferrer" class="external-link">Pool System</a> centralizado para la gestión óptima de memoria en enemigos, proyectiles y loot, garantizando un framerate estable.</li>
-                    <li><strong>Sistema de Oleadas & Spawn Dinámico:</strong> Motor de <a href="https://github.com/AxelSHacker/Proyecto-2-Trimestre/blob/MapaLowPoly/Shoot_The_Guiris/Assets/Scripts/Controlers/WaveController.cs" target="_blank" rel="noopener noreferrer" class="external-link">progresión por hordas</a> con control de dificultad escalable y gestión de spawners distribuidos.</li>
-                    <li><strong>Diseño de Niveles (Tarifa Old Town):</strong> Reconstrucción del casco antiguo de Tarifa adaptado a mecánicas de combate, rutas de flanqueo y chokepoints.</li>
-                    <li>
-                        <strong>Mecánicas de Combate & UI:</strong> Disparo modular con comportamiento 
-                        <a href="javascript:void(0)" onclick="toggleGif('diferido')" class="video-link">por tipo</a>, 
-                        habilidad de 
-                        <a href="javascript:void(0)" onclick="toggleGif('proyectil')" class="video-link">de proyectil</a> 
-                        y 
-                        <a href="javascript:void(0)" onclick="toggleGif('especial')" class="video-link">ataque especial</a>.
-
-                        <div id="diferido" style="display: none;">
-                            <video autoplay loop muted playsinline class="dropdown-video">
-                                <source src="bazca de pulpo.mp4" type="video/mp4">
-                                Tu navegador no soporta el formato de vídeo.
-                            </video>
-                        </div>
-                        <div id="proyectil" style="display: none;">
-                            <video autoplay loop muted playsinline class="dropdown-video">
-                                <source src="rifle de atun (1).mp4" type="video/mp4">
-                                Tu navegador no soporta el formato de vídeo.
-                            </video>
-                        </div>
-                        <div id="especial" style="display: none;">
-                            <video autoplay loop muted playsinline class="dropdown-video">
-                                <source src="patada.mp4" type="video/mp4">
-                                Tu navegador no soporta el formato de vídeo.
-                            </video>
-                        </div>
-                    </li>
-                    <li><strong>Arte y Sonido:</strong> Assets de uso libre.</li>
-                    
-                </ul>
-
-                <a href="https://axel-gamedeb.itch.io/wazungus-invasion" target="_blank" rel="noopener noreferrer" class="itch-link">🎮 Jugar Demo en itch.io</a>
-            </div>
-
-            <!-- Columna Derecha: Galería Vertical -->
-            <div class="gallery-vertical-panel">
-                <h4>📸 Capturas</h4>
-                <div class="gallery-vertical-list">
-                    <div class="gallery-item"><img src="Captura%20de%20pantalla%202026-09-28%20193545.png" alt="Tarifa Level Design 1"></div>
-                    <div class="gallery-item"><img src="Captura%20de%20pantalla%202026-09-28%20192739.png" alt="Tarifa Level Design 2"></div>
-                    <div class="gallery-item"><img src="Wuzungus3.png" alt="Tarifa Level Design 3"></div>
-                    <div class="gallery-item"><img src="Wuzungus4.png" alt="Tarifa Level Design 4"></div>
-                    <div class="gallery-item"><img src="Wuzungus6.png" alt="Tarifa Level Design 5"></div>
-                </div>
+        <div class="gallery-vertical-panel">
+            <h4>📸 Capturas</h4>
+            <div class="gallery-vertical-list">
+                <div class="gallery-item"><img src="Captura%20de%20pantalla%202026-09-28%20193545.png" alt="Tarifa Level Design 1"></div>
+                <div class="gallery-item"><img src="Captura%20de%20pantalla%202026-09-28%20192739.png" alt="Tarifa Level Design 2"></div>
+                <div class="gallery-item"><img src="Wuzungus3.png" alt="Tarifa Level Design 3"></div>
+                <div class="gallery-item"><img src="Wuzungus4.png" alt="Tarifa Level Design 4"></div>
+                <div class="gallery-item"><img src="Wuzungus6.png" alt="Tarifa Level Design 5"></div>
             </div>
         </div>
-    </div> <!-- FIN PROYECTO 2 -->
+    </div>
+<p class="role">Shooter en tercera persona de supervivencia por oleadas</p>
+    <!-- FILA INFERIOR: Descripciones y Funcionalidades -->
+    <div class="project-details-section">
+        <ul class="project-details">
+            <li><strong>Arquitectura de Rendimiento (Object Pooling):</strong> Implementación de un sistema de <a href="https://github.com/AxelSHacker/Proyecto-2-Trimestre/tree/main/Shoot_The_Guiris/Assets/Scripts/PoolSystem" target="_blank" rel="noopener noreferrer" class="external-link">Pool System</a> centralizado para la gestión óptima de memoria en enemigos, proyectiles y loot, garantizando un framerate estable.</li>
+            <li><strong>Sistema de Oleadas & Spawn Dinámico:</strong> Motor de <a href="https://github.com/AxelSHacker/Proyecto-2-Trimestre/blob/MapaLowPoly/Shoot_The_Guiris/Assets/Scripts/Controlers/WaveController.cs" target="_blank" rel="noopener noreferrer" class="external-link">progresión por hordas</a> con control de dificultad escalable y gestión de spawners distribuidos.</li>
+            <li><strong>Diseño de Niveles (Tarifa Old Town):</strong> Reconstrucción del casco antiguo de Tarifa adaptado a mecánicas de combate, rutas de flanqueo y chokepoints.</li>
+            <li>
+                <strong>Mecánicas de Combate & UI:</strong> Disparo modular con comportamiento 
+                <a href="javascript:void(0)" onclick="toggleGif('diferido')" class="video-link">por tipo</a>, 
+                habilidad de 
+                <a href="javascript:void(0)" onclick="toggleGif('proyectil')" class="video-link">de proyectil</a> 
+                y 
+                <a href="javascript:void(0)" onclick="toggleGif('especial')" class="video-link">ataque especial</a>.
 
-    <!-- Proyecto 3: The Elusive Knight -->
-    <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.88), rgba(22, 25, 32, 0.95)), url('ElusiveKnight%20GB.png'); background-size: cover; background-position: center;">
-        <div class="project-header">
-            <h3 class="project-title">The Elusive Knight</h3>
-            <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
-                <img src="Logo%20Android.png" alt="Android Logo" style="height: 80px; border-radius: 4px; transform: rotate(90deg);">
-                <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">Solo Developer (100%)</span>
-            </div>
+                <div id="diferido" style="display: none;">
+                    <video autoplay loop muted playsinline class="dropdown-video">
+                        <source src="bazca de pulpo.mp4" type="video/mp4">
+                        Tu navegador no soporta el formato de vídeo.
+                    </video>
+                </div>
+                <div id="proyectil" style="display: none;">
+                    <video autoplay loop muted playsinline class="dropdown-video">
+                        <source src="rifle de atun (1).mp4" type="video/mp4">
+                        Tu navegador no soporta el formato de vídeo.
+                    </video>
+                </div>
+                <div id="especial" style="display: none;">
+                    <video autoplay loop muted playsinline class="dropdown-video">
+                        <source src="patada.mp4" type="video/mp4">
+                        Tu navegador no soporta el formato de vídeo.
+                    </video>
+                </div>
+            </li>
+            <li><strong>Arte y Sonido:</strong> Assets de uso libre.</li>
+        </ul>
+
+        <a href="https://axel-gamedeb.itch.io/wazungus-invasion" target="_blank" rel="noopener noreferrer" class="itch-link">🎮 Jugar Demo en itch.io</a>
+    </div>
+</div> <!-- FIN PROYECTO 2 -->
+<!-- PROYECTO 3 -->
+           <h3 class="project-title">The Elusive Knight</h3>
+        <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
+            <img src="Logo%20Android.png" alt="Android Logo" style="height: 80px; border-radius: 4px; transform: rotate(90deg);">
+            <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">Solo Developer (100%)</span>
         </div>
-        
-        <p class="role">Plataformas 2D y Endless Runner para Android</p>
+    </div>
+    
+    <p class="role">Plataformas 2D y Endless Runner para Android</p>
 
-        <div class="project-body-grid">
-            <!-- Columna Izquierda: Información / Texto -->
-            <div>
-                <ul class="project-details">
-                    <li>
-                        <strong>Moveset Dinámico del Jugador:</strong> Cambia sus mecánicas, física y conjunto de habilidades según si está en zona de 
-                        <a href="javascript:void(0)" onclick="toggleGif('gifMoveset')" class="video-link">plataformas</a> o en fase 
-                        <a href="javascript:void(0)" onclick="toggleGif('platform')" class="video-link">Endless Runner</a>.
-                        
-                        <div id="gifMoveset" style="display: none; margin-top: 12px;">
-                            <video autoplay loop muted playsinline class="dropdown-video">
-                                <source src="Plataformas .mp4" type="video/mp4">
-                                Tu navegador no soporta el formato de vídeo.
-                            </video>
-                        </div>
-                        <div id="platform" style="display: none; margin-top: 12px;">
-                            <video autoplay loop muted playsinline class="dropdown-video">
-                                <source src="EndLess.mp4" type="video/mp4">
-                                Tu navegador no soporta el formato de vídeo.
-                            </video>
-                        </div>
-                    </li>
+    <!-- FILA SUPERIOR: Tráiler (Izquierda) + Panel de Capturas (Derecha) -->
+    <div class="media-row-grid">
+        <div class="trailer-container">
+            <iframe 
+                src="" 
+                title="Game Trailer" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
 
-                    <li>
-                        <strong>Generación Procedural Grid:</strong> Sistema de generación aleatoria e 
-                        <a href="javascript:void(0)" onclick="toggleGif('instanciacion')" class="video-link"> instanciación dinámica de tramos de mapa mediante Grid </a>.
-                        <div id="instanciacion" style="display: none; margin-top: 12px;">
-                            <video autoplay loop muted playsinline class="dropdown-video">
-                                <source src="InstanciaciondeTramos.mp4" type="video/mp4">
-                                Tu navegador no soporta el formato de vídeo.
-                            </video>
-                        </div>
-                    </li>
-
-                    <li>
-                        <strong>Power-Ups & Enemigos Regionales:</strong> Coleccionables con efectos temporales y variedad de enemigos con comportamientos únicos.
-                    </li>
-
-                    <li>
-                        <strong>Parallax Scroll Adaptativo:</strong> Motor de <a href="https://github.com/AxelSHacker/Proyecto-1-Trimeste-Repo/tree/main/Running%20Knight/Assets/Scripts/Parallax" target="_blank" rel="noopener noreferrer" class="external-link">paralaje multicapa</a> en 2D y sistema de intercambio de fondos.
-                    </li>
-                </ul>
-                
-                <a href="https://axel-gamedeb.itch.io/the-elusive-knight" target="_blank" rel="noopener noreferrer" class="itch-link">🎮 Jugar Demo en itch.io</a>
-            </div>
-
-            <!-- Columna Derecha: Galería Vertical -->
-            <div class="gallery-vertical-panel">
-                <h4>📸 Capturas</h4>
-                <div class="gallery-vertical-list">
-                    <div class="gallery-item"><img src="TheElusiveKnight1.png" alt="Entorno de Plataformas"></div>
+        <div class="gallery-vertical-panel">
+            <h4>📸 Capturas</h4>
+            <div class="gallery-vertical-list">
+                <div class="gallery-item"><img src="TheElusiveKnight1.png" alt="Entorno de Plataformas"></div>
                     <div class="gallery-item"><img src="ElusiveKinght2.png" alt="Sección Runner"></div>
                     <div class="gallery-item"><img src="ElusiveKinght3.png" alt="Grid Spawner Unity Editor"></div>
                     <div class="gallery-item"><img src="ElusiveKnight4.png" alt="Enemigos y Bosses"></div>
                     <div class="gallery-item"><img src="ElusiveKnight5.png" alt="UI e Interfaz"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FILA INFERIOR: Descripciones y Funcionalidades -->
+    <div class="project-details-section">
+        <ul class="project-details">
+            <li>
+                <strong>Moveset Dinámico del Jugador:</strong> Cambia sus mecánicas, física y conjunto de habilidades según si está en zona de 
+                <a href="javascript:void(0)" onclick="toggleGif('gifMoveset')" class="video-link">plataformas</a> o en fase 
+                <a href="javascript:void(0)" onclick="toggleGif('platform')" class="video-link">Endless Runner</a>.
+                
+                <div id="gifMoveset" style="display: none; margin-top: 12px;">
+                    <video autoplay loop muted playsinline class="dropdown-video">
+                        <source src="Plataformas .mp4" type="video/mp4">
+                        Tu navegador no soporta el formato de vídeo.
+                    </video>
                 </div>
-            </div>
-        </div>
-    </div> <!-- FIN PROYECTO 3 -->
-    <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.85), rgba(22, 25, 32, 0.95)), url('Background.png'); background-size: cover; background-position: center;"> 
-        <div class="project-header">
-            <h3 class="project-title">Fusionable Planet</h3>
-            <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
-                <img src="Logo%20Android.png" alt="Android Logo" style="height: 80px; border-radius: 4px; transform: rotate(90deg);">
-                <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">PC</span>
-            </div>
-        </div>
-        <p class="role">Solo Developer (100%)</p>
+                <div id="platform" style="display: none; margin-top: 12px;">
+                    <video autoplay loop muted playsinline class="dropdown-video">
+                        <source src="EndLess.mp4" type="video/mp4">
+                        Tu navegador no soporta el formato de vídeo.
+                    </video>
+                </div>
+            </li>
+
+            <li>
+                <strong>Generación Procedural Grid:</strong> Sistema de generación aleatoria e 
+                <a href="javascript:void(0)" onclick="toggleGif('instanciacion')" class="video-link">instanciación dinámica de tramos de mapa mediante Grid</a>.
+                <div id="instanciacion" style="display: none; margin-top: 12px;">
+                    <video autoplay loop muted playsinline class="dropdown-video">
+                        <source src="InstanciaciondeTramos.mp4" type="video/mp4">
+                        Tu navegador no soporta el formato de vídeo.
+                    </video>
+                </div>
+            </li>
+
+            <li>
+                <strong>Power-Ups & Enemigos Regionales:</strong> Coleccionables con efectos temporales y variedad de enemigos con comportamientos únicos.
+            </li>
+
+            <li>
+                <strong>Parallax Scroll Adaptativo:</strong> Motor de <a href="https://github.com/AxelSHacker/Proyecto-1-Trimeste-Repo/tree/main/Running%20Knight/Assets/Scripts/Parallax" target="_blank" rel="noopener noreferrer" class="external-link">paralaje multicapa</a> en 2D y sistema de intercambio de fondos.
+            </li>
+        </ul>
         
-        <div class="project-body-grid">
-            <!-- Columna Izquierda: Información / Texto -->
-            <div>
-                <ul class="project-details">
-                    <li><strong>Sistema de Físicas y Fusión de Entidades:</strong> Implementación de algoritmos de <a href="javascript:void(0)" onclick="toggleGif('Fusion')" class="video-link">colisión en 2D</a>para detectar el tipo de elemento, calcular la posición media del impacto y generar la entidad del siguiente nivel</li>
+        <a href="https://axel-gamedeb.itch.io/the-elusive-knight" target="_blank" rel="noopener noreferrer" class="itch-link">🎮 Jugar Demo en itch.io</a>
+    </div>
+</div> <!-- FIN PROYECTO 3 -->
+    <!-- Proyecto 4: Fusionable Planet -->
+<div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.85), rgba(22, 25, 32, 0.95)), url('Background.png'); background-size: cover; background-position: center;"> 
+    <div class="project-header">
+        <h3 class="project-title">Fusionable Planet</h3>
+        <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
+            <img src="Logo%20Android.png" alt="Android Logo" style="height: 80px; border-radius: 4px; transform: rotate(90deg);">
+            <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">PC</span>
+        </div>
+    </div>
+    
+    <p class="role">Solo Developer (100%)</p>
 
-<div id="Fusion" style="display: none;">
-                            <video autoplay loop muted playsinline class="dropdown-video">
-                                <source src="Fusion.mp4" type="video/mp4">
-                                Tu navegador no soporta el formato de vídeo.
-                            </video>
-                        </div>
-                    
-                    <li>
-                        <strong>Sistema de Combos y Feedback Visual:</strong> Programación de un sistema de puntuación dinámico con temporizadores de combo y efectos de partículas
-                    </li>
+    <!-- FILA SUPERIOR: Tráiler (Izquierda) + Panel de Capturas (Derecha) -->
+    <div class="media-row-grid">
+        <div class="trailer-container">
+            <iframe 
+                src="https://www.youtube.com/embed/tnIJTILlIbw" 
+                title="Game Trailer" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
 
-                    <li>
-                        <strong>Manejo Dinámico de Inputs y Proyección 2D:</strong> Control del jugador mediante el New Input System y traduciendo la posición del ratón/touch al espacio del mundo con límites adaptativos
-                    </li>
-                </ul>
-                <div class="trailer-container">
-                    <iframe 
-                        src="https://www.youtube.com/embed/tnIJTILlIbw" 
-                        title="Game Trailer" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-
-            <!-- Columna Derecha: Galería Vertical -->
-            <div class="gallery-vertical-panel">
-                <h4>📸 Capturas</h4>
-                <div class="gallery-vertical-list">
-                    <div class="gallery-item"><img src="FusionablePlanet1.png" alt="Necromancy Details"></div>
-                    <div class="gallery-item"><img src="FusionablePlanet2.png" alt="Fondo Necromancy"></div>
-                    <div class="gallery-item"><img src="FusionablePlanet3.png" alt="Fondo Necromancy"></div>
-                </div>
+        <div class="gallery-vertical-panel">
+            <h4>📸 Capturas</h4>
+            <div class="gallery-vertical-list">
+                <div class="gallery-item"><img src="FusionablePlanet1.png" alt="Necromancy Details"></div>
+                <div class="gallery-item"><img src="FusionablePlanet2.png" alt="Fondo Necromancy"></div>
+                <div class="gallery-item"><img src="FusionablePlanet3.png" alt="Fondo Necromancy"></div>
             </div>
         </div>
-    </div> <!-- FIN PROYECTO-->
+    </div>
+
+    <!-- FILA INFERIOR: Descripciones y Funcionalidades -->
+    <div class="project-details-section">
+        <ul class="project-details">
+            <li>
+                <strong>Sistema de Físicas y Fusión de Entidades:</strong> Implementación de algoritmos de 
+                <a href="javascript:void(0)" onclick="toggleGif('Fusion')" class="video-link">colisión en 2D</a> 
+                para detectar el tipo de elemento, calcular la posición media del impacto y generar la entidad del siguiente nivel.
+
+                <div id="Fusion" style="display: none; margin-top: 12px;">
+                    <video autoplay loop muted playsinline class="dropdown-video">
+                        <source src="Fusion.mp4" type="video/mp4">
+                        Tu navegador no soporta el formato de vídeo.
+                    </video>
+                </div>
+            </li>
+
+            <li>
+                <strong>Sistema de Combos y Feedback Visual:</strong> Programación de un sistema de puntuación dinámico con temporizadores de combo y efectos de partículas.
+            </li>
+
+            <li>
+                <strong>Manejo Dinámico de Inputs y Proyección 2D:</strong> Control del jugador mediante el New Input System y traduciendo la posición del ratón/touch al espacio del mundo con límites adaptativos.
+            </li>
+        </ul>
+    </div>
+</div> <!-- FIN PROYECTO 4 -->
 
 </div> <!-- FIN CONTAINER -->
 
