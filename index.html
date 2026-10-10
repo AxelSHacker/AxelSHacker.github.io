@@ -123,7 +123,7 @@
         padding: 30px;
         margin-bottom: 30px;
         transition: border-color 0.3s;
-        overflow: visible; /* Asegura expansión libre */
+        overflow: visible;
     }
 
     .project-card:hover {
@@ -157,7 +157,53 @@
         margin-bottom: 20px;
     }
 
-    /* GALERÍA VERTICAL DERECHA (AJUSTADA PARA CAPTURAS COMPLETAS) */
+    /* TOOLTIP DEL TÍTULO */
+    .tooltip-container {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .title-tooltip {
+        visibility: hidden;
+        opacity: 0;
+        width: 320px;
+        background-color: rgba(15, 17, 21, 0.98);
+        color: var(--text-color);
+        text-align: left;
+        border: 1px solid var(--accent-color);
+        border-radius: 8px;
+        padding: 12px 15px;
+        font-size: 0.85rem;
+        font-weight: normal;
+        line-height: 1.4;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 230, 118, 0.2);
+        position: absolute;
+        z-index: 1000;
+        top: 110%;
+        left: 0;
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+        transform: translateY(-5px);
+        pointer-events: none;
+    }
+
+    .title-tooltip::before {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 20px;
+        border-width: 6px;
+        border-style: solid;
+        border-color: transparent transparent var(--accent-color) transparent;
+    }
+
+    .tooltip-container:hover .title-tooltip {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* GALERÍA VERTICAL DERECHA */
     .gallery-vertical-panel {
         background: rgba(13, 15, 20, 0.85);
         border: 1px solid var(--border-color);
@@ -198,7 +244,7 @@
 
     .gallery-item img {
         width: 100%;
-        height: auto; /* Mantiene la proporción original de la imagen sin forzar altura */
+        height: auto;
         display: block;
         border-radius: 8px;
         transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
@@ -207,7 +253,6 @@
         transform-origin: center center;
     }
 
-    /* ZOOM X2.5 LIBRE FUERA DEL PANEL */
     .gallery-item img:hover {
         transform: scale(2.5);
         box-shadow: 0 0 25px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 230, 118, 0.6);
@@ -216,7 +261,7 @@
         z-index: 9999;
     }
 
-    /* VISOR MODAL / PREVIEW FLOTANTE */
+    /* VISOR MODAL */
     .img-popover {
         position: fixed;
         top: 50%;
@@ -460,14 +505,19 @@
 
     <!-- Proyecto 1: The Rising of Necromancy -->
     <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.85), rgba(22, 25, 32, 0.95)), url('FondoRisingof.png'); background-size: cover; background-position: center;"> 
-        <div class="project-header">
-            <h3 class="project-title">The Rising of Necromancy</h3>
+       <div class="project-header">
+            <div class="tooltip-container">
+                <h3 class="project-title">The Rising of Necromancy</h3>
+                <div class="title-tooltip">
+                    Juego de estrategia y táctica en tiempo real donde encarnas a un nigromante que invoca hordas de no-muertos, gestiona formaciones de combate y conquista territorios.
+                </div>
+            </div>
+            
             <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
                 <img src="8330691.png" alt="Necromancy Icon" style="height: 100px; border-radius: 8px;">
                 <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">PC</span>
             </div>
         </div>
-
         <p class="role">Diseño y Programación de Gameplay / IA</p>
 
         <div class="media-row-grid">
@@ -576,11 +626,11 @@
                 <li><strong>Diseño de Niveles (Tarifa Old Town):</strong> Reconstrucción del casco antiguo de Tarifa adaptado a mecánicas de combate, rutas de flanqueo y chokepoints.</li>
                 <li>
                     <strong>Mecánicas de Combate & UI:</strong> Disparo modular con comportamiento 
-                    <a href="javascript:void(0)" onclick="toggleGif('diferido')" class="video-link">por tipo</a>, 
+                    <a href="javascript:void(0)" onmouseenter="showVideo('diferido')" onmouseleave="hideVideo('diferido')" class="video-link">por tipo</a>, 
                     habilidad de 
-                    <a href="javascript:void(0)" onclick="toggleGif('proyectil')" class="video-link">de proyectil</a> 
+                    <a href="javascript:void(0)" onmouseenter="showVideo('proyectil')" class="video-link">de proyectil</a> 
                     y 
-                    <a href="javascript:void(0)" onclick="toggleGif('especial')" class="video-link">ataque especial</a>.
+                    <a href="javascript:void(0)" onmouseenter="showVideo('especial')" class="video-link">ataque especial</a>.
 
                     <div id="diferido" style="display: none;">
                         <video autoplay loop muted playsinline class="dropdown-video">
@@ -645,8 +695,8 @@
             <ul class="project-details">
                 <li>
                     <strong>Moveset Dinámico del Jugador:</strong> Cambia sus mecánicas, física y conjunto de habilidades según si está en zona de 
-                    <a href="javascript:void(0)" onclick="toggleGif('gifMoveset')" class="video-link">plataformas</a> o en fase 
-                    <a href="javascript:void(0)" onclick="toggleGif('platform')" class="video-link">Endless Runner</a>.
+                    <a href="javascript:void(0)" onmouseenter="showVideo('gifMoveset')" onmouseleave="hideVideo('gifMoveset')" class="video-link">plataformas</a> o en fase 
+                    <a href="javascript:void(0)" onmouseenter="showVideo('platform')" onmouseleave="hideVideo('platform')" class="video-link">Endless Runner</a>.
                     
                     <div id="gifMoveset" style="display: none; margin-top: 12px;">
                         <video autoplay loop muted playsinline class="dropdown-video">
@@ -664,7 +714,7 @@
 
                 <li>
                     <strong>Generación Procedural Grid:</strong> Sistema de generación aleatoria e 
-                    <a href="javascript:void(0)" onclick="toggleGif('instanciacion')" class="video-link">instanciación dinámica de tramos de mapa mediante Grid</a>.
+                    <a href="javascript:void(0)" onmouseenter="showVideo('instanciacion')" onmouseleave="hideVideo('instanciacion')" class="video-link">instanciación dinámica de tramos de mapa mediante Grid</a>.
                     <div id="instanciacion" style="display: none; margin-top: 12px;">
                         <video autoplay loop muted playsinline class="dropdown-video">
                             <source src="InstanciaciondeTramos.mp4" type="video/mp4">
@@ -692,7 +742,7 @@
             <h3 class="project-title">Fusionable Planet</h3>
             <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
                 <img src="Logo%20Android.png" alt="Android Logo" style="height: 60px; border-radius: 4px; transform: rotate(90deg);">
-                <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">Solo Developer (100%)</span>
+                <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">PC</span>
             </div>
         </div>
         
@@ -722,7 +772,7 @@
             <ul class="project-details">
                 <li>
                     <strong>Sistema de Físicas y Fusión de Entidades:</strong> Implementación de algoritmos de 
-                    <a href="javascript:void(0)" onclick="toggleGif('Fusion')" class="video-link">colisión en 2D</a> 
+                    <a href="javascript:void(0)" onmouseenter="showVideo('Fusion')" onmouseleave="hideVideo('Fusion')" class="video-link">colisión en 2D</a> 
                     para detectar el tipo de elemento, calcular la posición media del impacto y generar la entidad del siguiente nivel.
 
                     <div id="Fusion" style="display: none; margin-top: 12px;">
@@ -760,11 +810,16 @@
 </footer>
 
 <script>
-function toggleGif(id) {
+function showVideo(id) {
     var elemento = document.getElementById(id);
-    if (elemento.style.display === "none" || elemento.style.display === "") {
+    if (elemento) {
         elemento.style.display = "block";
-    } else {
+    }
+}
+
+function hideVideo(id) {
+    var elemento = document.getElementById(id);
+    if (elemento) {
         elemento.style.display = "none";
     }
 }
