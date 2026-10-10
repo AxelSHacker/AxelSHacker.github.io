@@ -121,7 +121,7 @@
         border: 1px solid var(--border-color);
         border-radius: 12px;
         padding: 30px;
-        margin-bottom: 30px;
+        margin-bottom: 35px; /* Separación clara entre cada tarjeta de proyecto */
         transition: border-color 0.3s;
         overflow: visible;
     }
@@ -503,7 +503,9 @@
 
     <h2 style="margin-bottom: 20px; padding-left: 10px;">Proyectos Destacados</h2>
 
-    <!-- Proyecto 1: The Rising of Necromancy -->
+    <!-- ========================================== -->
+    <!-- PROYECTO 1: The Rising of Necromancy -->
+    <!-- ========================================== -->
     <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.85), rgba(22, 25, 32, 0.95)), url('FondoRisingof.png'); background-size: cover; background-position: center;"> 
        <div class="project-header">
             <div class="tooltip-container">
@@ -586,7 +588,9 @@
         </div>
     </div>
 
-    <!-- Proyecto 2: Wazungus Invasión -->
+    <!-- ========================================== -->
+    <!-- PROYECTO 2: Wazungus Invasión -->
+    <!-- ========================================== -->
     <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.85), rgba(22, 25, 32, 0.95)), url('Captura%20de%20pantalla%202026-09-28%20215647.png'); background-size: cover; background-position: center;">
         <div class="project-header">
             <div class="tooltip-container">
@@ -664,7 +668,9 @@
         </div>
     </div>
 
-    <!-- Proyecto 3: The Elusive Knight -->
+    <!-- ========================================== -->
+    <!-- PROYECTO 3: The Elusive Knight -->
+    <!-- ========================================== -->
     <div class="project-card">
         <div class="project-header">
             <h3 class="project-title">The Elusive Knight</h3>
@@ -742,7 +748,9 @@
         </div>
     </div>
 
-    <!-- Proyecto 4: Fusionable Planet -->
+    <!-- ========================================== -->
+    <!-- PROYECTO 4: Fusionable Planet -->
+    <!-- ========================================== -->
     <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.85), rgba(22, 25, 32, 0.95)), url('Background.png'); background-size: cover; background-position: center;"> 
         <div class="project-header">
             <h3 class="project-title">Fusionable Planet</h3>
@@ -834,4 +842,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImg');
     const closeBtn = document.getElementById('closeModalBtn');
-    const galleryImages = document
+    const galleryImages = document.querySelectorAll('.gallery-item img');
+
+    galleryImages.forEach(img => {
+        img.addEventListener('click', function() {
+            modalImg.src = this.src;
+            modalImg.alt = this.alt;
+            modal.showModal();
+        });
+    });
+
+    closeBtn.addEventListener('click', function() {
+        modal.close();
+    });
+
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.close();
+        }
+    });
+});
+</script>
+
+</body>
+</html>
