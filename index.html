@@ -509,8 +509,7 @@
             <div class="tooltip-container">
                 <h3 class="project-title">The Rising of Necromancy</h3>
                 <div class="title-tooltip">
-                    Juego de estrategia y táctica en tiempo real donde encarnas a un nigromante que invoca hordas de no-muertos, gestiona formaciones de combate y conquista territorios.
-                </div>
+                    Un Roguelite de acción táctica donde alzas a los caídos, forjas un arsenal legendario y comandas a tus hordas en batalla. Personaliza las formaciones de tu ejército, desata devastadoras habilidades de apoyo y reclama la victoria junto a tus tropas.
             </div>
             
             <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
@@ -587,11 +586,15 @@
     </div>
 
     <!-- Proyecto 2: Wazungus Invasión -->
-    <div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.85), rgba(22, 25, 32, 0.95)), url('Captura%20de%20pantalla%202026-09-28%20215647.png'); background-size: cover; background-position: center;">
-        <div class="project-header">
-            <h3 class="project-title">Wazungus Invasión</h3>
+    <div class="project-header">
+            <div class="tooltip-container">
+                <h3 class="project-title">Wazungus Invasión</h3>
+                <div class="title-tooltip">
+                   Has vuelto a tu ciudad natal solo para descubrir que ha sido comprada e invadida por extranjeros. Recupera tu hogar distrito a distrito en este alocado shooter en tercera persona por oleadas, desatando un arsenal absurdo que va desde el Púlpo Bazooka hasta la Pistola de Levante.
+            </div>
+            
             <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
-                <img src="7264143.png" alt="Wazungus Icon" style="height: 100px; border-radius: 4px;">
+                <img src="8330691.png" alt="Necromancy Icon" style="height: 100px; border-radius: 8px;">
                 <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">Solo Developer (100%)</span>
             </div>
         </div>
@@ -628,9 +631,9 @@
                     <strong>Mecánicas de Combate & UI:</strong> Disparo modular con comportamiento 
                     <a href="javascript:void(0)" onmouseenter="showVideo('diferido')" onmouseleave="hideVideo('diferido')" class="video-link">por tipo</a>, 
                     habilidad de 
-                    <a href="javascript:void(0)" onmouseenter="showVideo('proyectil')" class="video-link">de proyectil</a> 
+                    <a href="javascript:void(0)" onmouseenter="showVideo('proyectil')" onmouseleave="hideVideo('proyectil')" class="video-link">de proyectil</a> 
                     y 
-                    <a href="javascript:void(0)" onmouseenter="showVideo('especial')" class="video-link">ataque especial</a>.
+                    <a href="javascript:void(0)" onmouseenter="showVideo('especial')" onmouseleave="hideVideo('especial')" class="video-link">ataque especial</a>.
 
                     <div id="diferido" style="display: none;">
                         <video autoplay loop muted playsinline class="dropdown-video">
@@ -794,7 +797,80 @@
             <a href="https://axel-gamedeb.itch.io/fusionable-planet" target="_blank" rel="noopener noreferrer" class="itch-link">🎮 Jugar Demo en itch.io</a>
         </div>
     </div>
+<div class="project-header">
+            <div class="tooltip-container">
+                <h3 class="project-title">Las Aventuras de Terry y Foca</h3>
+                <div class="title-tooltip">
+                   Un juego de sigilo y terror cómico en 1ª persona donde dos peluches cobran vida para tomar venganza contra la crueldad humana. Intercala entre Terry para olfatear la ruta e identificar objetos clave, y Foca para destrozarlo todo y activar trampas mortales. Esquiva las patrullas del humano, acecha en las sombras y convierte la casa en una trampa mortal.
+            </div>
+            
+            <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
+                <img src="8330691.png" alt="Necromancy Icon" style="height: 100px; border-radius: 8px;">
+                <span class="badge" style="font-size: 1.2rem; padding: 8px 18px;">Solo Developer (100%)</span>
+            </div>
+        </div>
 
+        <p class="role">Shooter en tercera persona de supervivencia por oleadas</p>
+
+        <div class="media-row-grid">
+            <div class="trailer-container">
+                <iframe 
+                    src="https://https://youtu.be/embed/yF38KynqilM" 
+                    title="Game Trailer" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="gallery-vertical-panel">
+                <h4>📸 Capturas</h4>
+                <div class="gallery-vertical-list">
+                    <div class="gallery-item"><img src="Captura%20de%20pantalla%202026-09-28%20193545.png" alt="Tarifa Level Design 1"></div>
+                    <div class="gallery-item"><img src="Captura%20de%20pantalla%202026-09-28%20192739.png" alt="Tarifa Level Design 2"></div>
+                    <div class="gallery-item"><img src="Wuzungus4.png" alt="Tarifa Level Design 4"></div>
+                    <div class="gallery-item"><img src="Wuzungus6.png" alt="Tarifa Level Design 5"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-details-section">
+            <ul class="project-details">
+                <li><strong>Arquitectura de Rendimiento (Object Pooling):</strong> Implementación de un sistema de <a href="https://github.com/AxelSHacker/Proyecto-2-Trimestre/tree/main/Shoot_The_Guiris/Assets/Scripts/PoolSystem" target="_blank" rel="noopener noreferrer" class="external-link">Pool System</a> centralizado para la gestión óptima de memoria en enemigos, proyectiles y loot, garantizando un framerate estable.</li>
+                <li><strong>Sistema de Oleadas & Spawn Dinámico:</strong> Motor de <a href="https://github.com/AxelSHacker/Proyecto-2-Trimestre/blob/MapaLowPoly/Shoot_The_Guiris/Assets/Scripts/Controlers/WaveController.cs" target="_blank" rel="noopener noreferrer" class="external-link">progresión por hordas</a> con control de dificultad escalable y gestión de spawners distribuidos.</li>
+                <li><strong>Diseño de Niveles (Tarifa Old Town):</strong> Reconstrucción del casco antiguo de Tarifa adaptado a mecánicas de combate, rutas de flanqueo y chokepoints.</li>
+                <li>
+                    <strong>Mecánicas de Combate & UI:</strong> Disparo modular con comportamiento 
+                    <a href="javascript:void(0)" onmouseenter="showVideo('diferido')" onmouseleave="hideVideo('diferido')" class="video-link">por tipo</a>, 
+                    habilidad de 
+                    <a href="javascript:void(0)" onmouseenter="showVideo('proyectil')" onmouseleave="hideVideo('proyectil')" class="video-link">de proyectil</a> 
+                    y 
+                    <a href="javascript:void(0)" onmouseenter="showVideo('especial')" onmouseleave="hideVideo('especial')" class="video-link">ataque especial</a>.
+
+                    <div id="diferido" style="display: none;">
+                        <video autoplay loop muted playsinline class="dropdown-video">
+                            <source src="bazca de pulpo.mp4" type="video/mp4">
+                            Tu navegador no soporta el formato de vídeo.
+                        </video>
+                    </div>
+                    <div id="proyectil" style="display: none;">
+                        <video autoplay loop muted playsinline class="dropdown-video">
+                            <source src="rifle de atun (1).mp4" type="video/mp4">
+                            Tu navegador no soporta el formato de vídeo.
+                        </video>
+                    </div>
+                    <div id="especial" style="display: none;">
+                        <video autoplay loop muted playsinline class="dropdown-video">
+                            <source src="patada.mp4" type="video/mp4">
+                            Tu navegador no soporta el formato de vídeo.
+                        </video>
+                    </div>
+                </li>
+                <li><strong>Arte y Sonido:</strong> Assets de uso libre.</li>
+            </ul>
+
+            <a href="https://axel-gamedeb.itch.io/wazungus-invasion" target="_blank" rel="noopener noreferrer" class="itch-link">🎮 Jugar Demo en itch.io</a>
+        </div>
+    </div>
 </div>
 
 <!-- VISOR MODAL DE IMÁGENES DE GALERÍA -->
