@@ -817,7 +817,7 @@
      <!-- ========================================== -->
 <!-- PROYECTO: Las Aventuras de Terry y Foca -->
 <!-- ========================================== -->
-<div class="project-card">
+<div class="project-card" style="background-image: linear-gradient(rgba(22, 25, 32, 0.85), rgba(22, 25, 32, 0.95)), url('Fondo.png'); background-size: cover; background-position: center;"> 
     <div class="project-header">
         <div class="tooltip-container">
             <h3 class="project-title">Las Aventuras de Terry y Foca</h3>
@@ -847,7 +847,7 @@
         <div class="gallery-vertical-panel">
             <h4>📸 Capturas</h4>
             <div class="gallery-vertical-list">
-                <div class="gallery-item"><img src="Terry%20y%20Foca%202.png" alt="Terry y Foca Gameplay 1"></div>
+                <div class="gallery-item"><img src="Terry%20y%20foca%205.png" alt="Terry y Foca Gameplay 1"></div>
                 <div class="gallery-item"><img src="Terry%20y%20Foca%203.png" alt="Terry y Foca Gameplay 2"></div>
                 <div class="gallery-item"><img src="Terry%20y%20Foca%204.png" alt="Terry y Foca Gameplay 3"></div>
                 <div class="gallery-item"><img src="terry%20y%20foca1.png" alt="Terry y Foca Gameplay 4"></div>
@@ -861,10 +861,44 @@
                 <strong>Sistema de Cambio de Personaje (Character Swapping):</strong> Mecánica fluida en 1ª persona para alternar en tiempo real entre Terry y Foca, ajustando el controlador, la física y el conjunto de habilidades.
             </li>
             <li>
-                <strong>Olfato de Rastreo (Terry):</strong> Sistema de visión de olfato que resalta pistas, zonas de interacción y puntos de interés ocultos en la casa.
+                <strong>Olfato de Rastreo (Terry):</strong> Sistema de visión de  <a href="javascript:void(0)" onmouseenter="showVideo('olfato')" onmouseleave="hideVideo('olfato')" class="video-link">olfato</a> 
+                    que resalta pistas,
+
+                    <div id="olfato" style="display: none; margin-top: 12px;">
+                        <video autoplay loop muted playsinline class="dropdown-video">
+                            <source src="video%20rastreo.mp4" type="video/mp4">
+                            Tu navegador no soporta el formato de vídeo.
+                        </video> zonas de  <a href="javascript:void(0)" onmouseenter="showVideo('interes')" onmouseleave="hideVideo('interes')" class="video-link">interacción</a> 
+                        </div>
+                    y puntos de interés ocultos en la casa.
+
+                    <div id="interes" style="display: none; margin-top: 12px;">
+                        <video autoplay loop muted playsinline class="dropdown-video">
+                            <source src="video%20zona%20interes.mp4" type="video/mp4">
+                            Tu navegador no soporta el formato de vídeo.
+                        </video>
+                        </div>
             </li>
             <li>
-                <strong>Interactividad y Trampas Mortales (Foca):</strong> Motor de físicas para golpear mobiliario, volcar estanterías y desencadenar trampas ambientales en las habitaciones.
+                <strong>Interactividad y Trampas Mortales (Foca):</strong> Motor de físicas para golpear mobiliario,  
+                <a href="javascript:void(0)" onmouseenter="showVideo('trampas')" onmouseleave="hideVideo('trampas')" class="video-link">volcar estanterías</a> 
+                    y desencadenar
+
+                    <div id="trampas" style="display: none; margin-top: 12px;">
+                        <video autoplay loop muted playsinline class="dropdown-video">
+                            <source src="video%20mueble%20pasillo.mp4" type="video/mp4">
+                            Tu navegador no soporta el formato de vídeo.
+                        </video>
+                     </div>  
+                <a href="javascript:void(0)" onmouseenter="showVideo('trampas')" onmouseleave="hideVideo('trampas')" class="video-link">trampas</a> 
+                    ambientales en las habitaciones.
+
+                    <div id="trampas" style="display: none; margin-top: 12px;">
+                        <video autoplay loop muted playsinline class="dropdown-video">
+                            <source src="videoexplosion.mp4" type="video/mp4">
+                            Tu navegador no soporta el formato de vídeo.
+                        </video>
+                        </div>
             </li>
             <li>
                 <strong>IA de Patrulla y Sigilo:</strong> Lógica de patrullaje con conos de visión y detección sonora para el enemigo humano.
